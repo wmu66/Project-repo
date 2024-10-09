@@ -1,0 +1,6 @@
+{"discount_percentage": 10,
+ "marketing_spending": 50,
+  "product_category": "Electronics", 
+  "day": "Tuesday", 
+  "holiday": true, 
+  "price": 250}
