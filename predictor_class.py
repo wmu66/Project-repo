@@ -6,8 +6,16 @@ import platform
 from time import perf_counter
 
 class Prediction():
-    def __init__(self, json_data):
-        self.load_model()
+    def __init__(self):
+        self.load_model()  #initializing the class only loads the model
+
+    def load_model(self): #loading the model takes the most time so do it only once when initializing
+        try: 
+            self.model = load("best_model.joblib")
+        except FileNotFoundError:
+            print("Model not found")
+
+    def __call__(self, json_data):
         self.discount_percentage = json_data['discount_percentage']
         self.marketing_spending = json_data['marketing_spending']
         self.product_category = json_data['product_category']
@@ -17,12 +25,7 @@ class Prediction():
         self.day_bool() #converting the entered day into booleans
         self.category_bool()
         self.get_pred()
-    
-    def load_model(self):
-        try: 
-            self.model = load("best_model.joblib")
-        except FileNotFoundError:
-            print("Model not found")
+        return self.predicted_value
 
     def day_bool(self): #this is needed so that the day can be converted into binary variables
         self.days_of_week_dict = { #no need for Monday since that is the reference category
@@ -82,12 +85,14 @@ def JSON_depacker(file_name):
         data = json.load(file)
     return data
 
-    
+
+
 
 
 if __name__ == "__main__":
     data = JSON_depacker('example.json')
+    predictor = Prediction() #initializing the class
     t_start = perf_counter()
-    print(Prediction(data))
+    print(f"The predicted revenue is: {predictor(data)} USD")
     t_stop = perf_counter()
     print(f"The time it took to create a prediction: {t_stop - t_start}")
