@@ -1,0 +1,30 @@
+Two possible versions of dealng with the data:
+    By day-to-day: We predict the expected revenue for every day in the retail shop, for a given product. The user can set:
+        Category
+            Electronics
+            Furniture
+            Groceries
+            Clothing
+        Price
+        Discount percentage
+        Marketing spending
+        day
+            The day of the week
+        holiday effect
+            True or false, whether there is a holiday effect
+
+Alternative version:
+    Gropuing the data by products and week. Meaning we predict the expected revenue for every given week. This dataset works better than the day by day. 
+    The user can set:
+        Category
+            Electronics
+            Furniture
+            Groceries
+            Clothing
+        Price
+        Discount percentage
+        Marketing spending
+        holiday effect
+            True or false, whether there was a holiday effect that week    
+    
+I also tried to group by product. So predicting revenue for every product. However, the databse contains only 42 products, so not enough data to be able to fit a model. 
