@@ -28,3 +28,14 @@ Alternative version:
             True or false, whether there was a holiday effect that week    
     
 I also tried to group by product. So predicting revenue for every product. However, the databse contains only 42 products, so not enough data to be able to fit a model. 
+
+What values should the different QR codes mean? For this lets use the weekly averages in the data as well as standard deviations:
+    Price
+        mean: 453.69
+        sd: 289.9
+    Discount   
+        mean: 2.99
+        sd: 2.4
+    Marketing spending
+        mean: 341.3
+        sd: 171.9

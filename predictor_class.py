@@ -11,7 +11,7 @@ class Prediction():
 
     def load_model(self): #loading the model takes the most time so do it only once when initializing
         try: 
-            self.model = load("best_model.joblib")
+            self.model = load("grouped_by_week_model.joblib")
         except FileNotFoundError:
             print("Model not found")
 
@@ -19,26 +19,11 @@ class Prediction():
         self.discount_percentage = json_data['discount_percentage']
         self.marketing_spending = json_data['marketing_spending']
         self.product_category = json_data['product_category']
-        self.day = json_data['day']
         self.holiday = json_data['holiday']
         self.price = json_data['price']
-        self.day_bool() #converting the entered day into booleans
-        self.category_bool()
+        self.category_bool() #converting category to boolean
         self.get_pred()
         return self.predicted_value
-
-    def day_bool(self): #this is needed so that the day can be converted into binary variables
-        self.days_of_week_dict = { #no need for Monday since that is the reference category
-                    'Tuesday': 0,
-                    'Wednesday': 0,
-                    'Thursday': 0,
-                    'Friday': 0,
-                    'Saturday': 0,
-                    'Sunday': 0
-                }
-        for day, value in self.days_of_week_dict.items():
-            if day == self.day:
-                value = 1
 
     def category_bool(self):
             self.categories = {  #no need for the clothing category since that is the reference category
@@ -49,29 +34,24 @@ class Prediction():
             for category, value in self.categories.items():
                 if category == self.product_category:
                     value = 1
+                    break
                 
     def get_pred(self):
 
         prediction = {
             'Discount Percentage': self.discount_percentage,
             'Marketing Spend (USD)': self.marketing_spending,
-            'Holiday Effect': self.holiday,
             'Full Price': self.price,
+            'Holiday Effect': self.holiday,
             'Product Category_Electronics': self.categories['Electronics'],
             'Product Category_Furniture': self.categories['Furniture'],
-            'Product Category_Groceries': self.categories['Groceries'],
-            'Day of the Week_Friday': self.days_of_week_dict['Friday'],
-            'Day of the Week_Saturday': self.days_of_week_dict['Saturday'],
-            'Day of the Week_Sunday': self.days_of_week_dict['Sunday'],
-            'Day of the Week_Thursday': self.days_of_week_dict['Thursday'],
-            'Day of the Week_Tuesday': self.days_of_week_dict['Tuesday'],
-            'Day of the Week_Wednesday': self.days_of_week_dict['Wednesday']
+            'Product Category_Groceries': self.categories['Groceries']
         }
         pred_df = pd.DataFrame([prediction])
         self.predicted_value = self.model.predict(pred_df)
         self.predicted_value = round(self.predicted_value[0], 2)
     def __str__(self):
-        return f"The predicted revenue is: {self.predicted_value} USD"
+        return f"The predicted weekly revenue is: {self.predicted_value} USD"
 
 def JSON_depacker(file_name):
     os_type = platform.system()
@@ -93,6 +73,8 @@ if __name__ == "__main__":
     data = JSON_depacker('example.json')
     predictor = Prediction() #initializing the class
     t_start = perf_counter()
-    print(f"The predicted revenue is: {predictor(data)} USD")
+    prediction = predictor(data)
+    marketing_spending = predictor.marketing_spending
+    print(f"The predicted weekly revenue is: {prediction} USD, with marketing spending of {marketing_spending}, meaning a profit of {prediction-marketing_spending}")
     t_stop = perf_counter()
     print(f"The time it took to create a prediction: {t_stop - t_start}")
