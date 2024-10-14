@@ -9,5 +9,5 @@ class ApiAppConfig(AppConfig):
     predictor_instance = None
 
     def ready(self):
-        # Initialize the singleton instance when the app is ready
+        # Initializes the Prediction() class, creating the predictor_instance. This will load the model
         ApiAppConfig.predictor_instance = Prediction()

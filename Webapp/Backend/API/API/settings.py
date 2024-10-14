@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'API_app',
     'rest_framework',
-    'corsheaders'
+    'corsheaders' #corsheaders added to avoid cors error, so django will allow API requests coming from the same computer. Meaning the backend and frontend can be hosted on the same computer.
 ]
 
 MIDDLEWARE = [
