@@ -1,19 +1,5 @@
-Two possible versions of dealng with the data:
-    By day-to-day: We predict the expected revenue for every day in the retail shop, for a given product. The user can set:
-        Category
-            Electronics
-            Furniture
-            Groceries
-            Clothing
-        Price
-        Discount percentage
-        Marketing spending
-        day
-            The day of the week
-        holiday effect
-            True or false, whether there is a holiday effect
 
-Alternative version:
+Chosen data version:
     Gropuing the data by products and week. Meaning we predict the expected revenue for every given week. This dataset works better than the day by day. 
     The user can set:
         Category
@@ -27,15 +13,26 @@ Alternative version:
         holiday effect
             True or false, whether there was a holiday effect that week    
     
-I also tried to group by product. So predicting revenue for every product. However, the databse contains only 42 products, so not enough data to be able to fit a model. 
 
 What values should the different QR codes mean? For this lets use the weekly averages in the data as well as standard deviations:
     Price
         mean: 453.69
         sd: 289.9
+        max: 970.21
     Discount   
         mean: 2.99
         sd: 2.4
+        max: 20.0
     Marketing spending
         mean: 341.3
         sd: 171.9
+        max: 1005
+    Values above max should not be available to users, as the model has no idea what to do with them. Meaning values above the max won't change the prediciton. 
+
+API documentation:
+    Predictions are produced by the Prediction() class, inside /Backend/API
+    The API server is started by running manage.py runserver 9000. Make sure to include 9000 to set the port of he server to 9000
+    When the server is started it initializes the Prediction() class. On init Prediction() loads the model.
+    API requests are sent to http://127.0.0.1:9000/api/request/. The server expects a POST httprequest, that has as its body the set of chosen parameters (for formatting see example.json).
+    The API then returns the result of the prediction in the format: {'prediction': prediction}
+    

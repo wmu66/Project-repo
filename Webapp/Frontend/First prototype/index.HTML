@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        
+    }
+    .slidecontainer {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+        }
+
+    .slider {
+        width: 200px;
+        margin-right: 10px; 
+    }
+
+    #columns_div {
+        display: flex;
+        align-items: top;
+    }
+    
+    .column {
+        width: 50%
+    }
+
+</style>
+<body>
+    <h1>Welcome to the Tester Page</h1>
+    <div id="columns_div">
+        <div class="column">
+            <h2>Set price:</h2>
+            <div class="slidecontainer">
+                <input type="range" min="20" max="1000" value="350" class="slider" id="price">
+                <p id="price_output">Price: </p>
+            </div>
+
+            <h2>Set discount:</h2>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="10" value="5" class="slider" id="discount">
+                <p id="discount_output">Discount: </p>
+            </div>
+
+            <h2>Set marketing spending:</h2>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="800" value="100" class="slider" id="marketing_spending">
+                <p id="marketing_output">Marketing spending: </p>
+            </div>
+
+            <h2> Select holiday effect: </h2>
+
+            <input type="checkbox" name="Holiday Effect" id="holiday">
+            </select>
+
+            <h2>Selet category</h2>
+
+            <select name="Category" id="category">
+                <option value="electronics">Electronics</option>
+                <option value="furniture">Furniture</option>
+                <option value="groceries">Groceries</option>
+                <option value="clothing">Clothing</option>
+            </select>
+        </div>
+
+        <div class="column">
+            <h2 >Results: </h2>
+            <h3 id="result_output">Predicted revenue: </h3>
+        </div>
+
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

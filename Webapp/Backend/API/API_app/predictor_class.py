@@ -13,6 +13,7 @@ class Prediction():
         try: 
             self.model = load("grouped_by_week_model.joblib")
         except FileNotFoundError:
+            print("Current working directory:", os.getcwd())
             print("Model not found")
 
     def __call__(self, json_data):
@@ -27,14 +28,15 @@ class Prediction():
 
     def category_bool(self):
             self.categories = {  #no need for the clothing category since that is the reference category
-                'Electronics': 0,
-                'Furniture': 0,
-                'Groceries': 0
+                'electronics': 0,
+                'furniture': 0,
+                'groceries': 0
                 }
             for category, value in self.categories.items():
                 if category == self.product_category:
-                    value = 1
+                    self.categories[category] = 1
                     break
+
                 
     def get_pred(self):
 
@@ -43,9 +45,9 @@ class Prediction():
             'Marketing Spend (USD)': self.marketing_spending,
             'Full Price': self.price,
             'Holiday Effect': self.holiday,
-            'Product Category_Electronics': self.categories['Electronics'],
-            'Product Category_Furniture': self.categories['Furniture'],
-            'Product Category_Groceries': self.categories['Groceries']
+            'Product Category_Electronics': self.categories['electronics'],
+            'Product Category_Furniture': self.categories['furniture'],
+            'Product Category_Groceries': self.categories['groceries']
         }
         pred_df = pd.DataFrame([prediction])
         self.predicted_value = self.model.predict(pred_df)
