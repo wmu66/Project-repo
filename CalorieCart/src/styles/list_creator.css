@@ -1,0 +1,183 @@
+:root {
+    --accentcolor1: #3D5A80;
+    --accentcolor1-darker: #2D475E;
+    --accentcolor2: #EE6C4D;
+    --accentcolor3: #E0FBFC;
+    --font-small: 0.875rem;
+    --font-base: 1rem;
+    --font-large: 1.5rem;
+    --font-larger: 2rem;
+    --font-really-large: 2.6rem;
+    
+  }
+
+#list-lister {
+    min-width: 240px;
+    max-width: 30%;
+    height: 100%;
+    min-height: 100vh;
+    border-right: 5px solid var(--accentcolor1);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    
+  }
+  
+  #select-or-create-div {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    min-width: 70%;
+    width: 100%;
+  
+  }
+  
+  #select-or-create {
+    font-size: var(--font-really-large);
+    margin-top: 10%;
+    color: var(--accentcolor1);
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .account-edit-button {
+    max-height: 70px;
+    background-color: var(--accentcolor1);
+    border: none;
+    margin-right: 50px;
+  }
+  
+  .account-circle-button {
+    max-height: 70px;
+  }
+  
+  #list-lister-title-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+  
+  }
+  
+  #new-list-button {
+    background-color: transparent;
+    border: none;
+    color: var(--accentcolor2);
+    font-size: 64px;
+  }
+  
+  #your-lists {
+    background-color: var(--accentcolor1);
+    border-radius: 10px;
+    color: white;
+    font-size: var(--font-larger);
+    min-width: 160px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+  }
+  
+  
+  .list-component {
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--accentcolor1);
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 15px;
+  }
+  
+  .list-component-button {
+    width: 170px;
+    height: 50px;
+    margin: 0;
+    margin-right: 5px;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    color: white;
+  }
+  
+  .list-creator-dialog {
+    background-color: var(--accentcolor3);
+    border: solid 10px var(--accentcolor1);
+    border-radius: 20px;
+    position: fixed;
+    top: -15%;
+  
+  }
+  
+  .list-creator-dialog::backdrop {
+    background-color: black;
+    opacity: 35%;
+  }
+  
+  .list-creator-dialog-button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .list-creator-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .list-name-h2 {
+    font-size: var(--font-larger);
+    line-height: 50px;
+    margin: 0;
+    margin-left: 5px;
+  }
+  
+  
+  .three-dot-image {
+    max-width: 30px;
+  }
+  
+  
+  .three-dot-btn {
+    background-color: transparent;
+    margin: 0;
+    border: none;
+    max-width: 30px;
+    height: 50px;
+  }
+  
+  .three-dot-menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .three-dot-menu:hover .three-dot-content {display: block;}
+  
+  .three-dot-content {
+    display: none;
+    position: absolute;
+    background-color: var(--accentcolor1);
+    min-width: 120px;
+    z-index: 1;
+  }
+  
+  .three-dot-option {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    background-color: transparent;
+    min-width: 120px;
+    border: none;
+    font-size: var(--font-small);
+    }
+  
+  .three-dot-option:hover {background-color: var(--accentcolor1-darker);}
