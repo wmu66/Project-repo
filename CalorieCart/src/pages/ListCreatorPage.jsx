@@ -11,7 +11,7 @@ const ListCreatorPage = () => {
         </h1>
         <AccountEditButton />
       </div>
-      <div className="main-content light-blue">
+      <div className="main-content">
         <ListLister />
         <div id="select-or-create-div">
           <h1 id="select-or-create">

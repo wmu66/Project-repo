@@ -2,6 +2,7 @@
     --accentcolor1: #3D5A80;
     --accentcolor1-darker: #2D475E;
     --accentcolor2: #EE6C4D;
+    --accentcolor2-darker: #D85F46;
     --accentcolor3: #E0FBFC;
     --font-small: 0.875rem;
     --font-base: 1rem;
@@ -15,7 +16,7 @@
     min-width: 240px;
     max-width: 30%;
     height: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     border-right: 5px solid var(--accentcolor1);
     display: flex;
     flex-direction: column;
@@ -67,6 +68,10 @@
     color: var(--accentcolor2);
     font-size: 64px;
   }
+
+  #new-list-button:hover {
+    color: var(--accentcolor2-darker);
+  }
   
   #your-lists {
     background-color: var(--accentcolor1);
@@ -93,6 +98,10 @@
     justify-content: left;
     align-items: center;
     margin: 15px;
+  }
+
+  .list-component:hover {
+    background-color: var(--accentcolor1-darker);
   }
   
   .list-component-button {

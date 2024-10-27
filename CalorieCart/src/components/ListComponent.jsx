@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 
 const ListComponent = ({ list_name, id }) => {
   const threedotmenu_options = ["Rename", "Remove"];
-  console.log(id);
-
   const navigate = useNavigate();
 
   const onClick = (key) => {

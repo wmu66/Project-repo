@@ -8,7 +8,12 @@ const DetailEntry = () => {
   const navigate = useNavigate();
 
   const onClick = () => {
-    navigate("/create_list");
+    const weight_int = Math.round(parseInt(weight, 10));
+    if (isNaN(weight_int) || weight_int <= 0) {
+      setIsWeightValid("active"); //Checks weather weight is non-positive, or could not be converted to int
+    } else {
+      navigate("/create_list");
+    }
   };
 
   const gender = ["Male", "Female"];
@@ -17,6 +22,7 @@ const DetailEntry = () => {
   const [name, setName] = useState("");
   const [weight, setWeight] = useState("");
   const [isDefaultSelected, setIsDefaultSelected] = useState(true); //checks whether a gender has been picked
+  const [weightValid, setIsWeightValid] = useState(""); // controls weather warning that weight is invalid should be shown
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -38,19 +44,22 @@ const DetailEntry = () => {
         <h1 id="welcome-message">Welcome! Who are you?</h1>
         <input
           className="input"
-          placeholder="What's your name?"
+          placeholder="Username"
           type="text"
           onChange={handleNameChange}
         ></input>
         <input
           className="input"
-          placeholder="What's your weight?"
+          placeholder="Weight (kg)"
           type="number"
           onChange={handleWeightChange}
           step="1"
         ></input>
+        <div className={"alert alert-danger weight" + weightValid} role="alert">
+          Weight must be positive
+        </div>
         <DropDownMenu
-          text="What's your gender?"
+          text="Gender"
           options={gender}
           isDefaultSelected={isDefaultSelected}
           setIsDefaultSelected={setIsDefaultSelected}
