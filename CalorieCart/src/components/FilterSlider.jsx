@@ -13,11 +13,19 @@ const FilterSlider = ({ min, max, label, step, measurement }) => {
 
   const handleInput = (values) => {
     SetValue(values);
+    if (values[1] == max) {
+      //if the set higher value is the max value then a + will appear after the value
+      setMaxValueSelected("+");
+    } else {
+      setMaxValueSelected("");
+    }
   };
 
   const handleCheckbox = () => {
     setDisabled(!isEnabled);
   };
+
+  const [maxValueSelected, setMaxValueSelected] = useState("+"); //when max value is selected the value output should have a + after the measurement
 
   return (
     <>
@@ -43,7 +51,10 @@ const FilterSlider = ({ min, max, label, step, measurement }) => {
           <p className="slide-value"> {min_value + measurement} </p>
         )}
         {isEnabled && (
-          <p className="slide-value"> {max_value + measurement} </p>
+          <p className="slide-value">
+            {" "}
+            {max_value + measurement + maxValueSelected}{" "}
+          </p>
         )}
       </div>
     </>

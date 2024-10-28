@@ -18,14 +18,14 @@ const SearchAndFilter = () => {
         <DropDownMenu options={category_options} size="small" />
         <DropDownMenu options={color_options} size="small" />
         <FilterSlider
-          min="10"
+          min="0"
           max="1000"
           step="10"
           label="Weight"
           measurement="g"
         />
         <FilterSlider
-          min="10"
+          min="0"
           max="500"
           step="10"
           label="Calories"
@@ -33,14 +33,14 @@ const SearchAndFilter = () => {
         />
         <FilterSlider min="1" max="50" step="1" label="Fat" measurement="g" />
         <FilterSlider
-          min="1"
+          min="0"
           max="50"
           step="1"
           label="Protein"
           measurement="g"
         />
         <FilterSlider
-          min="1"
+          min="0"
           max="50"
           step="1"
           label="Carbohydrates"
