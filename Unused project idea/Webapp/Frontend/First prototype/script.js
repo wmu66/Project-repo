@@ -15,6 +15,8 @@ const result_output = document.getElementById('result_output')
 const profit_ouptput = document.getElementById('profit_output')
 
 
+//calls the GetPrediction function with a debounce, meaning api call is only sent after a slight delay in user input
+
 
 //functions for changing values and for setting defaultValues
 function defaultValues() {
@@ -34,7 +36,7 @@ function discountChanged() {
 }
 
 function marketingChanged() {
-    marketing_output.textContent = `Discount: ${marketing_spending_slider.value}$`;
+    marketing_output.textContent = `Marketing spending: ${marketing_spending_slider.value}$`;
     getPrediction()
 }
 
@@ -73,7 +75,7 @@ async function getPrediction() {
         result_output.textContent = `Predicted revenue: ${responseData.prediction}$`
 
         //getting profit value:
-        let profit = responseData.prediction - marketing_spending
+        let profit = responseData.prediction - marketing_spending.toFixed(2)
         profit_ouptput.textContent = `Predicted profit: ${profit}$`
 
     } catch (error) {
