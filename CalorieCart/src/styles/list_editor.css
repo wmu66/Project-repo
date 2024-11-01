@@ -6,6 +6,7 @@
     --accentcolor2-darker: #C6513A;
     --accentcolor3: #E0FBFC;
     --accentcolor3-darker: #B2E3E8;
+    --font-smaller: 0.75rem;
     --font-small: 0.875rem;
     --font-base: 1rem;
     --font-large: 1.5rem;
@@ -22,7 +23,6 @@
     justify-content: top;
     align-items: center;
     border-right: solid 5px var(--accentcolor1);
-
   }
 
 
@@ -199,3 +199,148 @@
   .grocery-item button:hover {
     color: var(--accentcolor2-darker);
   }
+
+  @media (max-height: 1170px) {
+
+
+    .editor-column-div {
+      width: 240px;
+      height: 85%;
+      margin-bottom: 10px;
+    }
+
+    .small-title {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 220px;
+      min-height: 40px;
+      border-radius: 10px;
+    }
+
+    .input {
+      min-height: 0;
+    }
+   
+    .input.small {
+      width: 200px;
+      height: 40px;
+      margin: 5px;
+      font-size: var(--font-smaller);
+      padding-left: 0.2rem;
+    }
+
+    .drop-down.small {
+      width: 200px;
+      font-size: var(--font-small);
+      max-height: 40px;
+      margin: 5px;
+      padding: 5px;
+    }
+  
+    .checkbox {
+        margin-top: 10px;
+        margin-bottom: 4px;
+      }
+
+      .range-slider {
+        margin: 25px;
+        margin-top: 10px;
+      }
+    
+   
+  
+    .filter-slider-label {
+      font-size: var(--font-small);
+      color: white;
+      margin-bottom: 4px;
+      margin-top: 2px;
+    }
+  
+    .range-legend {
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      font-size: var(--font-small);
+    }
+  
+    .slide-value {
+      background-color: var(--accentcolor3);
+      border: 2 px solid var(--accentcolor3);
+      border-radius: 5px;
+      color: black;
+      font-size: var(--font-smaller);
+      margin: 2px;
+      padding: 0.1rem;
+    }
+
+    .grocery-item {
+      height: 40px;
+      border: 3px solid var(--accentcolor3);
+      border-radius: 10px;
+      margin: 8px;
+      color: white;
+      font-size: var(--font-base);
+    }
+    .grocery-item p {
+      margin: 0;
+      padding-left: 5px;
+    }
+
+
+  }
+
+
+  @media (max-width: 1550px) { 
+
+    .filter-div {
+      min-width: 220px;
+    }
+
+    .grocery-list-div {
+      min-width: 220px;
+    }
+
+    .editor-column-div {
+      width: 200px;
+    }
+
+    .small-title {
+      width: 180px;
+    }
+
+    .input.small {
+      width: 180px;
+    }
+
+    .drop-down.small {
+      width: 180px;
+    }
+  
+  
+    .range-legend {
+      width: 180px;
+    }
+
+    .range-slider {
+      width: 180px;
+    }
+
+    .filter-slider-label {
+      width: 180px;
+    }
+
+    .grocery-item {
+      width: 180px;
+    }
+
+    .total-values-div {
+      min-width: 250px;
+    }
+    .small-title.wide {
+      width: 230px;
+    }
+
+  }
+  

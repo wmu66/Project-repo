@@ -3,6 +3,7 @@
   --accentcolor1-darker: #2D475E;
   --accentcolor2: #EE6C4D;
   --accentcolor3: #E0FBFC;
+  --font-smaller: 0.75rem;
   --font-small: 0.875rem;
   --font-base: 1rem;
   --font-large: 1.5rem;
@@ -58,8 +59,8 @@ body {
 
 .detail-entry {
   width: 500px;
-  min-height: 700px;
-  margin-top: 100px;
+  min-height: 500px;
+  margin-top: 5%;
   background-color: var(--accentcolor3);
   display: flex;
   justify-content: flex-start;
@@ -72,15 +73,14 @@ body {
 
 #account-circle {
   margin-top: 50px;
-  min-width: 200px;
-  min-height: 200px;
+  width: 200px;
 }
 
 #welcome-message {
-  margin-top: 30px;
+  margin-top: 5%;
   font-size: var(--font-large);
   color: var(--accentcolor1);
-  margin-bottom: 30px;
+  margin-bottom: 5% ;
 }
 
 .input {
@@ -161,8 +161,8 @@ body {
 }
 
 .healthy-food-image {
-  width: 35%;
-  max-width: 600px;
+  width: 20%;
+  max-width: 700px;
   height: auto;
   bottom: 80px;
   position: absolute;
@@ -199,3 +199,51 @@ body {
   align-items: center;
 }
 
+
+@media (max-height: 1170px) {
+  .detail-entry {
+    margin-top: 3%;
+  }
+  #account-circle {
+    margin-top: 5%;
+    width: 35%;
+  }
+  
+  .header-footer {
+  min-height: 50px; }
+
+  .button.button.medium {
+    max-height: 40px;
+    max-width: 150px;
+  }
+
+  .input {
+    min-height: 40px;
+  }
+
+  .healthy-food-image {
+    bottom: 50px;
+  }
+
+  :root {
+    --font-smaller: 0.75rem;
+    --font-small: 0.85rem;
+    --font-base: 1.2rem;
+    --font-large: 1.40rem;
+    --font-larger: 1.75rem;
+    --font-really-large: 2.2rem;
+    
+  }
+}
+
+@media (max-height: 950px) {
+  :root {
+    --font-smaller: 0.65rem;
+    --font-small: 0.75rem;
+    --font-base: 1rem;
+    --font-large: 1.25rem;
+    --font-larger: 1.5rem;
+    --font-really-large: 2rem;
+    
+  }
+}

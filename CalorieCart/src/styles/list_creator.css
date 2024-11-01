@@ -190,3 +190,9 @@
     }
   
   .three-dot-option:hover {background-color: var(--accentcolor1-darker);}
+
+  @media (max-height: 1170px) {
+    .account-edit-button img {
+      max-height: 45px;
+    }
+  }

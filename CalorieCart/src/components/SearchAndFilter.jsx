@@ -10,14 +10,14 @@ const SearchAndFilter = () => {
     "Fruit and vegetables",
     "Bread",
   ];
-  const color_options = ["Any color", "Blue", "Red", "Green"]; //placeholder for testing
+  // const color_options = ["Any color", "Blue", "Red", "Green"]; //placeholder for testing
 
   return (
     <>
       <div className="editor-column-div">
         <input type="text" className="input small" placeholder="Search..." />
         <DropDownMenu options={category_options} size="small" />
-        <DropDownMenu options={color_options} size="small" />
+        {/* <DropDownMenu options={color_options} size="small" /> */}
         <FilterSlider
           min="0"
           max="1000"
