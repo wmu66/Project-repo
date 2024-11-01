@@ -33,16 +33,19 @@ const ListEditorPage = () => {
       </div>
       <div className="main-content list_editor">
         <div className="filter-div">
-          <SmallTitle>{listID}</SmallTitle>
+          <SmallTitle>Filter and search</SmallTitle>
           <SearchAndFilter />
         </div>
         <div className="grocery-list-div">
           <SmallTitle>Added items</SmallTitle>
           <AddedItems />
         </div>
-        <div className="search-result-div">Search result div</div>
+        <div className="search-result-div"></div>
         <div className="total-values-div">
-          <SmallTitle>Daily values</SmallTitle>
+          <SmallTitle customClass="wide">
+            {" "}
+            Daily values of list {listID}{" "}
+          </SmallTitle>
         </div>
       </div>
       <div className="header-footer footer" />

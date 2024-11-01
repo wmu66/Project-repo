@@ -68,11 +68,15 @@
     border-radius: 10px;
     border: none;
     color: white;
-    font: var(--font-larger);
+    font-size: var(--font-base);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .small-title.wide {
+    width: 320px;
   }
 
   .editor-column-div {
@@ -175,10 +179,8 @@
     font-size: var(--font-base);
   }
   .grocery-item p {
-    margin-top: 0 ;
-    margin-bottom: 10px;
-    padding-left: 5px;
-    margin-inline: 2px;
+    margin: 0;
+    padding-left: 10px;
     flex-grow: 1;
     text-align: left;
   }

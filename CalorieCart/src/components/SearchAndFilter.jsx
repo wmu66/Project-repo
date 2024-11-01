@@ -4,12 +4,13 @@ import Button from "./Button";
 
 const SearchAndFilter = () => {
   const category_options = [
+    //placeholder for testing
     "Any category",
     "Meat",
     "Fruit and vegetables",
     "Bread",
   ];
-  const color_options = ["Any color", "Blue", "Red", "Green"];
+  const color_options = ["Any color", "Blue", "Red", "Green"]; //placeholder for testing
 
   return (
     <>
