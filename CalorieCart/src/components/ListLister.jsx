@@ -1,5 +1,6 @@
 import ListComponent from "./ListComponent";
 import { useRef } from "react";
+import Dialog from "./Dialog";
 
 const ListLister = () => {
   const list_of_list = [
@@ -22,27 +23,11 @@ const ListLister = () => {
           >
             +
           </button>
-          <dialog ref={dialogRef} className="list-creator-dialog">
-            <form className="list-creator-form">
-              <input
-                type="text"
-                className="input"
-                placeholder="New list name"
-              />
-              <div className="list-creator-dialog-button-div">
-                <button
-                  type="submit"
-                  formMethod="dialog"
-                  className="button small"
-                >
-                  Cancel
-                </button>
-                <button type="submit" className="button small">
-                  Create
-                </button>
-              </div>
-            </form>
-          </dialog>
+          <Dialog
+            ref={dialogRef}
+            text="New list name"
+            ok_button_text="Create"
+          />
         </div>
         {list_of_list.map(([name, id]) => (
           <ListComponent list_name={name} key={id} id={id} />

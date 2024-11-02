@@ -6,6 +6,8 @@ import SmallTitle from "../components/SmallTitle.jsx";
 import SearchAndFilter from "../components/SearchAndFilter.jsx";
 import AddedItems from "../components/Addeditems.jsx";
 import Button from "../components/Button.jsx";
+import DailyValuesRightSide from "../components/DailyValuesRightSide.jsx";
+import SearchResults from "../components/SearchResults.jsx";
 
 const ListEditorPage = () => {
   const { listID } = useParams(); //gets the listID from the URL
@@ -40,12 +42,15 @@ const ListEditorPage = () => {
           <SmallTitle>Added items</SmallTitle>
           <AddedItems />
         </div>
-        <div className="search-result-div"></div>
+        <div className="search-result-div">
+          <SearchResults />
+        </div>
         <div className="total-values-div">
           <SmallTitle customClass="wide">
             {" "}
             Daily values of list {listID}{" "}
           </SmallTitle>
+          <DailyValuesRightSide />
         </div>
       </div>
       <div className="header-footer footer" />

@@ -92,6 +92,10 @@
     margin-bottom: 50px;
   }
 
+  .editor-column-div.wide {
+    width: 320px;
+  }
+
 
 
   .range-slider {
@@ -115,7 +119,8 @@
   .input.small {
     min-width: 180px;
     max-width: 200px;
-    margin: 20px;
+    margin: 10px;
+    margin-top: 20px;
   }
 
 
@@ -123,7 +128,7 @@
   .drop-down.small {
     width: 200px;
     height: 50px;
-    margin: 20px;
+    margin: 10px;
   }
   
   
@@ -200,13 +205,158 @@
     color: var(--accentcolor2-darker);
   }
 
-  @media (max-height: 1170px) {
+  .day-number-changer {
+    color: white;
+    border: solid 5px var(--accentcolor3);
+    width: 95%;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ 
+
+  .day-number-changer h2{
+    font-size: var(--font-large);
+    padding-left: 5px;
+  }
+
+  .daily-value-bar-div {
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accentcolor3);
+  }
+
+  .daily-value-bar-div.top {
+    border-top: 2px solid var(--accentcolor3);
+    padding-top: 5px;
+  }
+  .daily-value-bar-div.bottom {
+    border: none;
+  }
+
+  .daily-value-bar {
+    width:100%;
+  }
+  .daily-value-bar progress{
+    width: 100%;
+    height: 30px;
+    appearance: none;
+  }
+
+  .daily-value-bar progress::-webkit-progress-bar {
+    background-color: var(--accentcolor3); 
+    border-radius: 10px;
+  }
+  
+  .daily-value-bar progress::-webkit-progress-value {
+    background-color: var(--accentcolor2); 
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .bar-label{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    justify-content: space-between;
+    color: white;
+    font-size: var(--font-small);
+  }
+
+  .bar-label h4{
+    font-size: var(--font-base);
+  }
+
+  .set-sort {
+    background-color: var(--accentcolor1);
+    width: 98%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 1%;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .results-grid-div {
+    width: 98%;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 250px; 
+    margin-left: 1%;
+    margin-right: 1%;
+    gap: 10px;
+    overflow-y: auto;
+  }
+  .search-result-element {
+    height: 100%;
+    width: 100%;
+    background-color: var(--accentcolor1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid var(--accentcolor3);
+    border-radius: 15px;
+    line-height: normal;
+    cursor: pointer;
+    color: white;
+  }
+  .search-result-element:hover {
+    background-color: var(--accentcolor1-darker);
+  }
+
+  .search-result-element img {
+    height: 120px;
+    max-width: 150px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  .search-result-element h3 {
+    margin-top: 5px;
+    font-size: var(--font-larger);
+  }
+
+  .search-result-element p {
+    font-size: var(--font-base);
+  }
+
+  .sort-arrow {
+    max-height: 30px;
+    cursor: pointer;
+    fill: black;
+    z-index: 10;
+  }
+
+  .sort-arrow.up{
+    transform: scaleY(1);
+    transform-origin: center;
+  }
+
+  .sort-arrow.down {
+    transform: scaleY(-1);
+    transform-origin: center;
+  }
+
+
+
+  
+
+  @media (max-height: 1250px) {
 
 
     .editor-column-div {
       width: 240px;
-      height: 85%;
+      height: 88%;
       margin-bottom: 10px;
+      
     }
 
     .small-title {
@@ -288,6 +438,33 @@
       padding-left: 5px;
     }
 
+    .results-grid-div {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-auto-rows: 200px; 
+    }
+
+    .daily-value-bar progress{
+      height: 10px;
+    }
+    .day-number-changer h2{
+      font-size: var(--font-base);
+    }
+    .button.small {
+      font-size: var(--font-small);
+      height: 15px;
+    }
+    .day-number-changer {
+      border: 2px solid var(--accentcolor3);
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+    .daily-value-bar-div {
+      margin-top: 5px;
+      margin-bottom: 2px;
+    }
+    .bar-label h4{
+      font-size: var(--font-base);
+    }
 
   }
 
@@ -306,16 +483,23 @@
       width: 200px;
     }
 
+    .editor-column-div.wide {
+      width: 230px;
+    }
+
     .small-title {
       width: 180px;
     }
 
     .input.small {
       width: 180px;
+      margin: 2px;
+      margin-top: 4px;
     }
 
     .drop-down.small {
       width: 180px;
+      margin: 2px;
     }
   
   
@@ -341,6 +525,5 @@
     .small-title.wide {
       width: 230px;
     }
-
   }
   

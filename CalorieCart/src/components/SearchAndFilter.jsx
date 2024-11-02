@@ -16,7 +16,7 @@ const SearchAndFilter = () => {
     <>
       <div className="editor-column-div">
         <input type="text" className="input small" placeholder="Search..." />
-        <DropDownMenu options={category_options} size="small" />
+        <DropDownMenu options={category_options} custom_class="small" />
         {/* <DropDownMenu options={color_options} size="small" /> */}
         <FilterSlider
           min="0"
@@ -47,6 +47,7 @@ const SearchAndFilter = () => {
           label="Carbohydrates"
           measurement="g"
         />
+        <FilterSlider min="0" max="50" step="1" label="Fiber" measurement="g" />
         <Button size="medium" background="dark">
           Reset selection
         </Button>

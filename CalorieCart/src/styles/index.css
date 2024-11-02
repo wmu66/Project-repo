@@ -2,7 +2,9 @@
   --accentcolor1: #3D5A80;
   --accentcolor1-darker: #2D475E;
   --accentcolor2: #EE6C4D;
+  --accentcolor2-darker: #D85F46;
   --accentcolor3: #E0FBFC;
+  --accentcolor3-darker: #B2E3E8;
   --font-smaller: 0.75rem;
   --font-small: 0.875rem;
   --font-base: 1rem;
@@ -117,6 +119,12 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.drop-down.dark {
+  background-color: var(--accentcolor1);
+  border: 2px solid var(--accentcolor3);
+  color: white;
+}
+
 .button {
   margin: 15px;
   width: 230px;
@@ -199,8 +207,31 @@ body {
   align-items: center;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+  
+}
+::-webkit-scrollbar-track {
+  background: var(--accentcolor3);
+  border: 1px solid var(--accentcolor1);
+  border-radius: 10px;
+}
 
-@media (max-height: 1170px) {
+::-webkit-scrollbar-thumb {
+  background: var(--accentcolor2);
+  border-radius: 10px;
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accentcolor2-darker);
+}
+
+
+
+@media (max-height: 1300px) {
   .detail-entry {
     margin-top: 3%;
   }
@@ -224,6 +255,10 @@ body {
   .healthy-food-image {
     bottom: 50px;
   }
+  .button.small {
+    height: 30px;
+    margin: 0%;
+  }
 
   :root {
     --font-smaller: 0.75rem;
@@ -236,7 +271,7 @@ body {
   }
 }
 
-@media (max-height: 950px) {
+@media (max-height: 1150px) {
   :root {
     --font-smaller: 0.65rem;
     --font-small: 0.75rem;
