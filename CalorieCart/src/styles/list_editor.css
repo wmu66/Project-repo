@@ -293,6 +293,7 @@
     margin-right: 1%;
     gap: 10px;
     overflow-y: auto;
+    overflow-x: hidden;
   }
   .search-result-element {
     height: 100%;
@@ -307,6 +308,7 @@
     line-height: normal;
     cursor: pointer;
     color: white;
+    position: relative;
   }
   .search-result-element:hover {
     background-color: var(--accentcolor1-darker);
@@ -331,8 +333,11 @@
   .sort-arrow {
     max-height: 30px;
     cursor: pointer;
-    fill: black;
     z-index: 10;
+  }
+
+  .sort-arrow:hover {
+    fill: black;
   }
 
   .sort-arrow.up{
@@ -344,6 +349,35 @@
     transform: scaleY(-1);
     transform-origin: center;
   }
+
+
+
+
+.search-result-element .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: var(--accentcolor1);
+  color: #fff;
+  text-align: left;
+  padding-left: 10px;
+  border-radius: 6px;
+  font-size: var(--font-base);
+
+  position: absolute;
+  z-index: 10;
+  bottom: -25%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.search-result-element:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 
 
 
@@ -464,6 +498,13 @@
     }
     .bar-label h4{
       font-size: var(--font-base);
+    }
+
+    .search-result-element img {
+      height: 80px;
+      max-width: 100px;
+      overflow: hidden;
+      border-radius: 5px;
     }
 
   }
