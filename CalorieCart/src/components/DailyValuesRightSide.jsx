@@ -61,6 +61,7 @@ const DailyValuesRightSide = () => {
           healthy_amount={30}
           custom_class="bottom"
         />
+        <Button size="wide" background="dark">Get detailed stats</Button>
       </div>
     </>
   );

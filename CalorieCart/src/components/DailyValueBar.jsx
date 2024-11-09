@@ -31,14 +31,7 @@ const DailyValueBar = ({
       <div className="bar-label">
         <h4>Difference: </h4>
         <h4 style={{ color: "var(--accentcolor2)" }}>
-          {relative_difference + "%"}{" "}
-        </h4>
-      </div>
-      <div className="bar-label">
-        <h4> </h4>
-        <h4 style={{ color: "var(--accentcolor2)" }}>
-          {" "}
-          {absolute_difference + nutrition_measurement}
+          {relative_difference + "% (" + absolute_difference + nutrition_measurement + ")"}
         </h4>
       </div>
       <div className="daily-value-bar">

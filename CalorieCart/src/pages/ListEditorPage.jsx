@@ -53,7 +53,7 @@ const ListEditorPage = () => {
           <DailyValuesRightSide />
         </div>
       </div>
-      <div className="header-footer footer" />
+      {/* <div className="header-footer footer" /> */}
     </>
   );
 };

@@ -73,6 +73,7 @@ body {
   border-radius: 30px;
 }
 
+
 #account-circle {
   margin-top: 50px;
   width: 200px;
@@ -86,7 +87,7 @@ body {
 }
 
 .input {
-  margin: 15px;
+  margin: 10px;
   border: 2px solid var(--accentcolor1);
   min-width: 280px;
   min-height: 50px;
@@ -104,7 +105,7 @@ body {
 
 
 .drop-down {
-  margin: 15px;
+  margin: 10px;
   width: 280px;
   height: 50px;
   background-color: var(--accentcolor3);
@@ -192,19 +193,24 @@ body {
 }
 
 .alert.alert-danger.weight {
-  margin: 10px;
-  max-height: 35px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  max-height: 25px;
   min-width: 280px;
   text-align: center;
   display: none;
   
-  font-size: var(--font-large);
+  font-size: var(--font-base);
 }
 
 .alert.alert-danger.weight.active {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.alert.alert-danger.weight.inactive {
+  display: none;
 }
 
 ::-webkit-scrollbar {
@@ -233,11 +239,16 @@ body {
 
 @media (max-height: 1300px) {
   .detail-entry {
-    margin-top: 3%;
+    margin-top: 1%;
   }
   #account-circle {
     margin-top: 5%;
     width: 35%;
+  }
+
+  #welcome-message {
+    margin-top: 3%;
+    margin-bottom: 2.5% ;
   }
   
   .header-footer {
