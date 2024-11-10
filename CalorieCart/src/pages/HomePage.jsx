@@ -1,6 +1,6 @@
 import DetailEntry from "../components/DetailEntry";
-import healthyfoodleft from "../assets/healthy-food-left.jpg";
-import healthyfoodright from "../assets/healthy-food-right.jpg";
+import healthyfoodleft from "../assets/healthy-food-left.png";
+import healthyfoodright from "../assets/healthy-food-right.png";
 
 function HomePage() {
   return (

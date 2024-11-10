@@ -1,0 +1,41 @@
+:root {
+    --accentcolor1: #3D5A80;
+    --accentcolor1-darker: #2D475E;
+    --accentcolor2: #EE6C4D;
+    --accentcolor2-ligther: #F6A48A;
+    --accentcolor2-darker: #C6513A;
+    --accentcolor3: #E0FBFC;
+    --accentcolor3-darker: #B2E3E8;
+    --font-smaller: 0.75rem;
+    --font-small: 0.875rem;
+    --font-base: 1rem;
+    --font-large: 1.5rem;
+    --font-larger: 2rem;
+    --font-really-large: 2.6rem;
+    
+  }
+
+  .top-contributor-div {
+    background-color: var(--accentcolor3);
+    min-height: 93vh;
+    min-width: 300px;
+    display: flex;
+    border-right: 5px solid var(--accentcolor1);
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+  }
+
+  .contributing-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    width: 240px;
+    height: 50px;
+    border: 3px solid var(--accentcolor3);
+    border-radius: 10px;
+    margin: 5px;
+    color: white;
+    font-size: var(--font-base);
+  }

@@ -5,7 +5,7 @@ const DailyValueBar = ({
   nutrition_name,
   nutrition_measurement,
   amount,
-  custom_class,
+  custom_class="",
 }) => {
   let absolute_difference = amount - healthy_amount;
   let relative_difference = Math.round((amount / healthy_amount - 1) * 100);

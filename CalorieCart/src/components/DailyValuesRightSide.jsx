@@ -1,11 +1,17 @@
 import Button from "./Button";
 import { useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Dialog from "./Dialog";
 import DailyValueBar from "./DailyValueBar";
 
 const DailyValuesRightSide = () => {
   let daynumber = 7; //7 is the default value
   const dialogRef = useRef();
+  const navigate = useNavigate();
+  const { listID } = useParams();
+  const navigateToStats = () => {
+    navigate("/stats/" + listID);
+  }
   return (
     <>
       <div className="editor-column-div wide">
@@ -61,7 +67,7 @@ const DailyValuesRightSide = () => {
           healthy_amount={30}
           custom_class="bottom"
         />
-        <Button size="wide" background="dark">Get detailed stats</Button>
+        <Button customClass="dark wide no-margin" onClick={navigateToStats}>Get detailed stats</Button>
       </div>
     </>
   );

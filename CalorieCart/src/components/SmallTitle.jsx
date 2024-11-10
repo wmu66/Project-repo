@@ -12,7 +12,7 @@ const SmallTitle = ({ children, customClass = "" }) => {
 
 SmallTitle.propTypes = {
   children: PropTypes.node.isRequired,
-  customClass: PropTypes.string, //custom class can be "wide" to set width to 320px
+  customClass: PropTypes.string, //custom class can be "wide" to set width to 320px, bright
 };
 
 export default SmallTitle;

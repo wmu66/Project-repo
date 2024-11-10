@@ -17,7 +17,8 @@
 body {
   background-color: var(--accentcolor3);
   font-family: Poppins;
-  margin: 0
+  margin: 0;
+  overflow: hidden; 
 }
 
 .header-footer {
@@ -179,8 +180,7 @@ body {
 
 .image-bottom-left {
   left: 0;
-  transform: rotate(180deg);
-  transform: scaleY(-1);
+  transform: scaleY(1);
 }
 
 .image-bottom-right {

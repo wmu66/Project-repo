@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const GroceryItem = ({ text, amount }) => {
+const GroceryItem = ({ text, amount="" }) => {
   return (
     <>
       <div className="grocery-item">
@@ -14,7 +14,7 @@ const GroceryItem = ({ text, amount }) => {
 
 GroceryItem.propTypes = {
   text: PropTypes.node.isRequired,
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.number,
 };
 
 export default GroceryItem;
