@@ -17,7 +17,7 @@
 
   .top-contributor-div {
     background-color: var(--accentcolor3);
-    min-height: 93vh;
+    min-height: 100vh;
     min-width: 300px;
     display: flex;
     border-right: 5px solid var(--accentcolor1);

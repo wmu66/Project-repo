@@ -18,7 +18,7 @@ body {
   background-color: var(--accentcolor3);
   font-family: Poppins;
   margin: 0;
-  overflow: hidden; 
+  overflow: hidden
 }
 
 .header-footer {
@@ -254,9 +254,11 @@ body {
   .header-footer {
   min-height: 50px; }
 
-  .button.button.medium {
+
+  .button.medium {
     max-height: 40px;
     max-width: 150px;
+    font-size: var(--font-small);
   }
 
   .input {
@@ -269,6 +271,7 @@ body {
   .button.small {
     height: 30px;
     margin: 0%;
+    font-size: var(--font-small);
   }
 
   :root {
