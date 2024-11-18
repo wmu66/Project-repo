@@ -272,6 +272,7 @@ body {
     height: 30px;
     margin: 0%;
     font-size: var(--font-small);
+    margin: 2px;
   }
 
   :root {

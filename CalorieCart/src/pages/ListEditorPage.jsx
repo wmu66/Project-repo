@@ -28,7 +28,7 @@ const ListEditorPage = () => {
             List creator
           </Button>
           <h1 className="header-text">
-            Create your healthy, nutritious grocery list today!
+            CalorieCart: Create your healthy, nutritious grocery list today!
           </h1>
         </div>
         <AccountEditButton />

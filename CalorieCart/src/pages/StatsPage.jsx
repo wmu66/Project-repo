@@ -4,6 +4,7 @@ import "../styles/list_editor.css";
 import "../styles/stats.css";
 import AccountEditButton from "../components/AccountEditButton";
 import TopContributors from "../components/TopContributors.jsx";
+import ValueSetter from "../components/ValueSetter.jsx";
 
 
 const StatsPage = () => {
@@ -23,7 +24,7 @@ const StatsPage = () => {
                 List editor
             </Button>
             <h1 className="header-text">
-                Create your healthy, nutritious grocery list today!
+                CalorieCart: Create your healthy, nutritious grocery list today!
             </h1>
         </div>
         <AccountEditButton />
@@ -31,7 +32,7 @@ const StatsPage = () => {
       <div className="main-content list_editor">
         <div className="top-contributor-div"><TopContributors/></div>
         <div className="stats-div">stats div</div>
-        <div className="value-setting-div"> value setting div </div>
+        <div className="top-contributor-div right"><ValueSetter/> </div>
       </div>
       </>
   )

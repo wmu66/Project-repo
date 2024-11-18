@@ -7,7 +7,7 @@ function HomePage() {
     <>
       <div className="header-footer header">
         <h1 className="header-text">
-          Create your healthy, nutritious grocery list today!
+          CalorieCart: Create your healthy, nutritious grocery list today!
         </h1>
       </div>
       <div className="main-content">
