@@ -150,6 +150,11 @@ body {
   margin: 10px;
 }
 
+.button.w260 {
+  width: 260px;
+}
+
+
 .button.dark {
   background-color: var(--accentcolor1);
   color: white;
@@ -260,7 +265,6 @@ body {
     max-width: 150px;
     font-size: var(--font-small);
   }
-
   .input {
     min-height: 40px;
   }

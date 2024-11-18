@@ -44,3 +44,24 @@
     color: white;
     font-size: var(--font-base);
   }
+
+  .custom-value-setter-div {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    font-size: var(--font-large);
+
+  }
+
+  .custom-value-button {
+    background-color: transparent;
+    border: none;
+    color: var(--accentcolor2);
+    font-size: 48px;
+  }
+
+  .custom-value-button:hover {
+    color: var(--accentcolor2-darker);
+  }
