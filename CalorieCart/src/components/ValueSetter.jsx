@@ -14,11 +14,49 @@ const ValueSetter = () => {
 
   const [currentValues, setCurrentValues] = useState(healthy_values);
 
-  const defaultPreset = () => {
-    const resetValues = Object.fromEntries(
+  const defaultPreset = {
+    Calories: 1,
+    Fats: 1,
+    Carbohydrates: 1,
+    Protein: 1,
+    Fiber: 1,
+  }; //gives the multiplication used in the preset, 1 leaves values as they are
+
+  const muscleBuildingPreset = {
+    Calories: 1.15,
+    Protein: 1.3,
+    Fats: 1.1,
+    Carbohydrates: 1.2,
+    Fiber: 1,
+  };
+
+  const weightLossPreset = {
+    Calories: 0.75,
+    Protein: 1.2,
+    Fats: 0.85,
+    Carbohydrates: 0.8,
+    Fiber: 1.15,
+  };
+
+  const endurancePreset = {
+    Calories: 1.2,
+    Protein: 1.1,
+    Fats: 1.15,
+    Carbohydrates: 1.3,
+    Fiber: 1,
+  };
+
+  const presetChanger = (presetValues) => {
+    //function to handle all preset changes. It changes values using a dictionary passed to it
+    const newValues = Object.fromEntries(
       Object.entries(healthy_values).map(([key, value]) => [key, [...value]])
     );
-    setCurrentValues(resetValues);
+
+    Object.keys(newValues).forEach((key) => {
+      newValues[key][0] *= presetValues[key];
+      newValues[key][0] = Math.round(newValues[key][0]);
+    });
+    setCurrentValues(newValues);
   };
 
   const updateValue = (nutrition, newAmount) => {
@@ -30,11 +68,12 @@ const ValueSetter = () => {
   };
 
   const presets = {
-    "Default preset": defaultPreset,
-    "Muscle building": defaultPreset,
-    "Weight loss": defaultPreset,
-    "Endurance training": defaultPreset,
+    "Default preset": () => presetChanger(defaultPreset),
+    "Muscle building": () => presetChanger(muscleBuildingPreset),
+    "Weight loss": () => presetChanger(weightLossPreset),
+    "Endurance training": () => presetChanger(endurancePreset),
   };
+
   return (
     <>
       <div>

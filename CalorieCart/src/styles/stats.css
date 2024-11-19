@@ -65,3 +65,7 @@
   .custom-value-button:hover {
     color: var(--accentcolor2-darker);
   }
+
+  .spider-graph-div {
+    margin-top: 0px;
+  }
