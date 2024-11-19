@@ -66,6 +66,110 @@
     color: var(--accentcolor2-darker);
   }
 
+  .stats-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: left;
+    overflow: hidden;
+    height: 90vh;
+    overflow-y: auto;
+  }
+
   .spider-graph-div {
-    margin-top: 0px;
+    margin-top: 10px;
+    border: 5px solid var(--accentcolor1);
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+    min-height: 480px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-width: 600px;
+    padding: 0;
+    text-align: center;
+   }
+  .spider-graph-div h4 {
+    padding-top: 10px;
+    margin: 0;
+    font-size: var(--font-large);
+  }
+
+  .card-container {
+    width: 1200px;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .nutrition-card {
+    background-color: var(--accentcolor1);
+    border-radius: 10px;
+    width: 75;
+    padding: 15px;
+    position: relative;
+    margin: 10px;
+  }
+
+  .nutrition-card-title {
+    margin-right: 15px;
+    color: white;
+
+  }
+
+  .card-text {
+    text-align: left;
+    display: none;
+    background-color: var(--accentcolor3);
+    border: 5px solid var(--accentcolor2);
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 5px;
+  }
+  .card-text .container{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+ 
+  .nutrition-card.open .card-text {
+    display: block;
+  } 
+  .card-toggle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    right: 30px;
+    background-color: var(--accentcolor3);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: 0.2 ease-in-out;
+  }
+
+  .card-toggle:hover {
+    transform: scale(1.05);
+  }
+
+  .card-toggle .x-icon {
+    display: none;
+  }
+
+  .card-toggle .chevron {
+    display: block;
+  }
+
+  .nutrition-card.open .card-toggle .x-icon {
+    display: block
+  }
+
+  .nutrition-card.open .card-toggle .chevron {
+    display: none
   }

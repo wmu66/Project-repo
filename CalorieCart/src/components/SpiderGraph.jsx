@@ -13,7 +13,7 @@ const SpiderGraph = () => {
         },
         {
           name: "Daily stats",
-          data: [-20, 15, 15, -22, 0],
+          data: [20, 15, 15, -22, 0],
         },
       ],
       chart: {
@@ -26,6 +26,7 @@ const SpiderGraph = () => {
         fontFamily: "Poppins",
         foreColor: "#000000",
         offsetY: -50,
+        offsetX: 26,
       },
       colors: ["#EE6C4D", "#3D5A80"],
       fill: {
@@ -77,6 +78,9 @@ const SpiderGraph = () => {
             strokeColors: "#4A6C9F",
             strokeWidth: 1,
             connectorColors: "#4A6C9F",
+            fill: {
+              colors: ["#B2E3E8", "#E0FBFC"],
+            },
           },
         },
       },
