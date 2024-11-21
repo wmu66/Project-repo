@@ -60,10 +60,12 @@
     border: none;
     color: var(--accentcolor2);
     font-size: 48px;
+    transition: 0.2 ease-in-out;
   }
 
   .custom-value-button:hover {
     color: var(--accentcolor2-darker);
+    transition: scale(1.1);
   }
 
   .stats-div {
@@ -173,3 +175,13 @@
   .nutrition-card.open .card-toggle .chevron {
     display: none
   }
+
+  @media (max-height: 1250px) {
+    .card-container {
+      max-width: 100%;
+    }
+    .custom-value-button {
+      font-size: 34px;
+    }
+  }
+

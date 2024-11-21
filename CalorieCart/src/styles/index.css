@@ -136,6 +136,7 @@ body {
   border: 5px solid var(--accentcolor2);
   color: var(--accentcolor2);
   font-size: var(--font-base);
+  transition: 0.2 ease-in-out;
 }
 
 .button.small {
@@ -173,6 +174,7 @@ body {
 .button:enabled:hover {
   background-color: var(--accentcolor2);
   color: white;
+  transform: scale(1.03);
 }
 
 .healthy-food-image {
@@ -271,6 +273,10 @@ body {
 
   .healthy-food-image {
     bottom: 50px;
+  }
+
+  .button.w260 {
+    margin: 5px;
   }
   .button.small {
     height: 30px;

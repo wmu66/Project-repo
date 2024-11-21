@@ -177,6 +177,7 @@
     background-color: var(--accentcolor1);
     min-width: 120px;
     z-index: 1;
+    border-radius: 5px;
   }
   
   .three-dot-option {
@@ -186,6 +187,7 @@
     background-color: transparent;
     min-width: 120px;
     border: none;
+    border-radius: 5px;
     font-size: var(--font-small);
     }
   
