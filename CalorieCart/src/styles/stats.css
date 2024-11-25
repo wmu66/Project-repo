@@ -82,8 +82,10 @@
     margin-top: 10px;
     border: 5px solid var(--accentcolor1);
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
     height: 480px;
     min-height: 480px;
     overflow-y: hidden;

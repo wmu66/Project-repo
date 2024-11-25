@@ -26,7 +26,7 @@ const SpiderGraph = () => {
         fontFamily: "Poppins",
         foreColor: "#000000",
         offsetY: -50,
-        offsetX: 26,
+        offsetX: 25,
       },
       colors: ["#EE6C4D", "#3D5A80"],
       fill: {
