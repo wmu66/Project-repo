@@ -2,8 +2,8 @@ import RangeSlider from "react-range-slider-input";
 
 import PropTypes from "prop-types";
 import { useState } from "react";
-
-const FilterSlider = ({ min, max, label, step, measurement }) => {
+import {updateSlider} from "./Data.jsx"
+const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
   const [[min_value, max_value], SetValue] = useState([
     Number(min),
     Number(max),
@@ -12,6 +12,7 @@ const FilterSlider = ({ min, max, label, step, measurement }) => {
   const [isEnabled, setDisabled] = useState(true);
 
   const handleInput = (values) => {
+    updateSlider(substance, values);
     SetValue(values);
     if (values[1] == max) {
       //if the set higher value is the max value then a + will appear after the value

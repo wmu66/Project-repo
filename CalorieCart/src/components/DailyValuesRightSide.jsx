@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Dialog from "./Dialog";
 import DailyValueBar from "./DailyValueBar";
+import {getList, getHealthAmounts, getListAmounts} from "./Data.jsx";
 
 const DailyValuesRightSide = () => {
   let daynumber = 7; //7 is the default value
@@ -12,6 +13,7 @@ const DailyValuesRightSide = () => {
   const navigateToStats = () => {
     navigate("/stats/" + listID);
   }
+  const list = getList();
   return (
     <>
       <div className="editor-column-div wide">
@@ -38,33 +40,33 @@ const DailyValuesRightSide = () => {
         <DailyValueBar
           nutrition_name="Calories"
           nutrition_measurement="kcal"
-          amount={1800}
-          healthy_amount={2000}
+          amount={getListAmounts().cals}
+          healthy_amount={getHealthAmounts().cals}
           custom_class="top"
         />
         <DailyValueBar
           nutrition_name="Fats"
           nutrition_measurement="g"
-          amount={90}
-          healthy_amount={70}
+          amount={getListAmounts().fats}
+          healthy_amount={getHealthAmounts().fats}
         />
         <DailyValueBar
           nutrition_name="Protein"
           nutrition_measurement="g"
-          amount={58}
-          healthy_amount={55}
+          amount={getListAmounts().proteins}
+          healthy_amount={getHealthAmounts().proteins}
         />
         <DailyValueBar
           nutrition_name="Carbohydrates"
           nutrition_measurement="g"
-          amount={500}
-          healthy_amount={400}
+          amount={getListAmounts().carbs}
+          healthy_amount={getHealthAmounts().carbs}
         />
         <DailyValueBar
           nutrition_name="Fiber"
           nutrition_measurement="g"
-          amount={20}
-          healthy_amount={30}
+          amount={getListAmounts().fibers}
+          healthy_amount={getHealthAmounts().fibers}
           custom_class="bottom"
         />
         <Button customClass="dark wide no-margin" onClick={navigateToStats}>Get detailed stats</Button>

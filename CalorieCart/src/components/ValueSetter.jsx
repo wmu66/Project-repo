@@ -2,14 +2,15 @@ import SmallTitle from "./SmallTitle";
 import Button from "./Button";
 import CustomValue from "./CustomValue";
 import { useState } from "react";
+import { getHealthAmounts, updateHealthAmounts } from "./Data";
 
 const ValueSetter = () => {
   const healthy_values = {
-    Calories: [2000, "kcal", 100, 1000, 3000], // nutrition, healthy amount, measurement, step size, min and max. Step size is used for manual changing
-    Fats: [70, "g", 5, 20, 120],
-    Carbohydrates: [250, "g", 10, 100, 450],
-    Protein: [55, "g", 5, 15, 100],
-    Fiber: [35, "g", 5, 10, 70],
+    Calories: [getHealthAmounts().cals, "kcal", 100, 1000, 3000], // nutrition, healthy amount, measurement, step size, min and max. Step size is used for manual changing
+    Fats: [getHealthAmounts().fats, "g", 5, 20, 120],
+    Carbohydrates: [getHealthAmounts().carbs, "g", 10, 100, 450],
+    Protein: [getHealthAmounts().proteins, "g", 5, 15, 100],
+    Fiber: [getHealthAmounts().fibers, "g", 5, 10, 70],
   };
 
   const [currentValues, setCurrentValues] = useState(healthy_values);
@@ -55,12 +56,20 @@ const ValueSetter = () => {
     Object.keys(newValues).forEach((key) => {
       newValues[key][0] *= presetValues[key];
       newValues[key][0] = Math.round(newValues[key][0]);
+      updateValue(key, newValues[key][0])
     });
-    setCurrentValues(newValues);
+    //setCurrentValues(newValues);
   };
-
+  const translator = {
+    Calories: "cals", // nutrition, healthy amount, measurement, step size, min and max. Step size is used for manual changing
+    Fats: "fats",
+    Carbohydrates: "carbs",
+    Protein: "proteins",
+    Fiber: "fibers",
+  }
   const updateValue = (nutrition, newAmount) => {
     //use to update the healthy values
+    updateHealthAmounts(translator[nutrition], newAmount);
     setCurrentValues((prev) => ({
       ...prev,
       [nutrition]: [newAmount, ...prev[nutrition].slice(1)],

@@ -8,15 +8,20 @@ import AddedItems from "../components/Addeditems.jsx";
 import Button from "../components/Button.jsx";
 import DailyValuesRightSide from "../components/DailyValuesRightSide.jsx";
 import SearchResults from "../components/SearchResults.jsx";
+import { useState } from "react";
 
 const ListEditorPage = () => {
   const { listID } = useParams(); //gets the listID from the URL
   const navigate = useNavigate();
 
   const goBack = () => navigate("/create_list");
-
+  const [seed, setSeed] = useState(1);
+  const reset = () => {
+       setSeed(Math.random());
+   }
   return (
     <>
+    <div  onClick={reset} onKeyUp={reset}>
       <div className="header-footer header">
         <div className="header-with-return">
           <Button
@@ -54,6 +59,7 @@ const ListEditorPage = () => {
         </div>
       </div>
       {/* <div className="header-footer footer" /> */}
+      </div>
     </>
   );
 };

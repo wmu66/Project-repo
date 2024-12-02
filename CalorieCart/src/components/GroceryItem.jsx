@@ -1,12 +1,18 @@
 import PropTypes from "prop-types";
-
+import {addToList, removeFromList} from "./Data.jsx";
 const GroceryItem = ({ text, amount="" }) => {
+  function addItem(){
+    addToList(text);
+  }
+  function remItem(){
+    removeFromList(text);
+  }
   return (
     <>
       <div className="grocery-item">
         <p>{amount + " " + text}</p>
-        <button>+</button>
-        <button>-</button>
+        <button onClick={addItem}>+</button>
+        <button onClick={remItem}>-</button>
       </div>
     </>
   );

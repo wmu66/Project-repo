@@ -11,14 +11,7 @@ const DailyValueBar = ({
   let relative_difference = Math.round((amount / healthy_amount - 1) * 100);
 
   let value = relative_difference;
-  value = 35 + value;
-  if (value > 75) {
-    //relative difference is out of bounds
-    value = 75;
-  } else if (value < 0) {
-    //relative difference is out of bounds
-    value = 0;
-  }
+  value = Math.min(75, Math.max(35 + value, 0)); // I changed it to be smaller :), bounds are still 75 and 0
 
   return (
     <div className={"daily-value-bar-div " + custom_class}>
