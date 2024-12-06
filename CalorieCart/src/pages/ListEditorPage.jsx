@@ -39,9 +39,6 @@ const ListEditorPage = () => {
     list_status = ""
    }
 
-   console.log(list_len)
-   console.log(list_status)
-
   return (
     <>
     <div  onClick={reset} onKeyUp={reset}>

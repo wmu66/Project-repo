@@ -23,6 +23,12 @@ const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
   };
 
   const handleCheckbox = () => {
+    if (isEnabled) { // enabled, updating filter
+      updateSlider(substance, [min, max]) 
+    } 
+    else {
+      updateSlider(substance, [min_value, max_value]);
+    }
     setDisabled(!isEnabled);
   };
 
