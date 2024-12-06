@@ -13,6 +13,17 @@ const DailyValueBar = ({
   let value = relative_difference;
   value = Math.min(75, Math.max(35 + value, 0)); // I changed it to be smaller :), bounds are still 75 and 0
 
+  let bar_color = ""
+
+  if (value >= 30 && value <= 40) {
+      bar_color = "green"
+  }
+
+  else if (value < 30) {
+      bar_color = "not-enough"
+  }
+
+
   return (
     <div className={"daily-value-bar-div " + custom_class}>
       <div className="bar-label">
@@ -27,7 +38,7 @@ const DailyValueBar = ({
           {relative_difference + "% (" + absolute_difference + nutrition_measurement + ")"}
         </h4>
       </div>
-      <div className="daily-value-bar">
+      <div className={"daily-value-bar" + " " + bar_color}>
         <progress value={value.toString()} max="70" />
       </div>
       <div className="bar-label">

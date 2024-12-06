@@ -43,6 +43,10 @@
     border-right: solid 5px var(--accentcolor1);
   }
 
+  .grocery-list-div.disabled {
+    display: none;
+  }
+
   .search-result-div {
     width: 100%;
     border-right: solid 5px var(--accentcolor1);
@@ -58,6 +62,9 @@
     border-right: solid 5px var(--accentcolor1);
   }
 
+  .total-values-div.disabled {
+    display: none;
+  }
   .small-title {
     background-color: var(--accentcolor1);
     margin: 0;
@@ -109,8 +116,16 @@
     background-color: var(--accentcolor1);
     border-radius: 10px;
     width: 240px;
-    height: 84%;
+    height: 84vh;
+    max-height: 84vh;
     margin-bottom: 50px;
+  }
+
+  #top-contributors {
+    overflow-y: scroll;
+  }
+  #added-items {
+    overflow-y: scroll;
   }
 
   .editor-column-div.wide {
@@ -201,18 +216,19 @@
     align-items: center;
     column-count: 3;
     width: 200px;
-    height: 50px;
+    height: 55px;
     border: 3px solid var(--accentcolor3);
     border-radius: 10px;
     margin: 10px;
     color: white;
-    font-size: var(--font-base);
   }
   .grocery-item p {
     margin: 0;
     padding-left: 10px;
+    height: 50px;
     flex-grow: 1;
     text-align: left;
+    font-size: var(--font-base);
   }
 
   .grocery-item button {
@@ -284,6 +300,20 @@
     border-bottom-left-radius: 10px;
   }
 
+ 
+  .daily-value-bar.green progress::-webkit-progress-value {
+    background-color: #117E30; 
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .daily-value-bar.not-enough progress::-webkit-progress-value {
+    background-color: #E7B4A5; 
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+
   .bar-label{
     display: flex;
     align-items: center;
@@ -313,8 +343,8 @@
     width: 98%;
     height: 80vh;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 250px; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px; 
     margin-left: 1%;
     margin-right: 1%;
     gap: 10px;
@@ -335,6 +365,7 @@
     cursor: pointer;
     color: white;
     position: relative;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
   }
   .search-result-element:hover {
     background-color: var(--accentcolor1-darker);
@@ -349,6 +380,7 @@
 
   .search-result-element h3 {
     margin-top: 5px;
+    padding-left: 8px;
     font-size: var(--font-larger);
   }
 
@@ -414,7 +446,7 @@
 
     .editor-column-div {
       width: 240px;
-      height: 88%;
+      max-height: 85vh;
       margin-bottom: 10px;
       
     }
@@ -486,21 +518,23 @@
     }
 
     .grocery-item {
-      height: 40px;
+      height: 50px;
       border: 3px solid var(--accentcolor3);
       border-radius: 10px;
       margin: 8px;
       color: white;
-      font-size: var(--font-base);
+
     }
     .grocery-item p {
       margin: 0;
       padding-left: 5px;
+      padding-top: 2px;
+      font-size: var(--font-base);
     }
 
     .results-grid-div {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      grid-auto-rows: 200px; 
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-auto-rows: 250px; 
     }
 
     .daily-value-bar progress{
@@ -527,13 +561,20 @@
     }
 
     .search-result-element img {
-      height: 80px;
-      max-width: 100px;
+      height: 120px;
+      max-width: 150px;
       overflow: hidden;
       border-radius: 5px;
     }
 
+    .search-result-element p {
+      font-size: var(--font-large);
+    }
+
+
   }
+
+
 
 
   @media (max-width: 1550px) { 

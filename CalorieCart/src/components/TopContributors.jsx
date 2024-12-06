@@ -26,7 +26,7 @@ const TopContributors = () => {
   return (
     <>
         <div><SmallTitle customClass="w300">Top contributors</SmallTitle></div>
-        <div className="editor-column-div medium">
+        <div className="editor-column-div medium" id="top-contributors">
             <SmallTitle customClass="contributing medium">Calories</SmallTitle>
             {calList.map((obj) => (
                 <ContributingItem text={obj.name} value={obj.amount} measurement="kcal"/>

@@ -12,7 +12,7 @@ const AddedItems = () => {
   }
   return (
     <>
-      <div className="editor-column-div">
+      <div className="editor-column-div" id="added-items">
         {itemsHTML}
       </div>
     </>

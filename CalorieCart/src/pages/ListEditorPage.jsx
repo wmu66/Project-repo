@@ -9,6 +9,7 @@ import Button from "../components/Button.jsx";
 import DailyValuesRightSide from "../components/DailyValuesRightSide.jsx";
 import SearchResults from "../components/SearchResults.jsx";
 import { useState } from "react";
+import getList from "../components/Data.jsx"
 
 const ListEditorPage = () => {
   const { listID } = useParams(); //gets the listID from the URL
@@ -19,6 +20,28 @@ const ListEditorPage = () => {
   const reset = () => {
        setSeed(Math.random());
    }
+
+
+   const items = getList();
+   let list_status = "disabled"
+   let list_len = 0;
+
+   for (const [key, value] of Object.entries(items)) {
+    if ("amount" in value) {
+        list_len += value["amount"]
+    }
+  }
+
+   if (list_len == 0) {
+     list_status = "disabled"
+   }
+   else {
+    list_status = ""
+   }
+
+   console.log(list_len)
+   console.log(list_status)
+
   return (
     <>
     <div  onClick={reset} onKeyUp={reset}>
@@ -43,14 +66,15 @@ const ListEditorPage = () => {
           <SmallTitle>Filter and search</SmallTitle>
           <SearchAndFilter />
         </div>
-        <div className="grocery-list-div">
-          <SmallTitle>Added items</SmallTitle>
-          <AddedItems />
-        </div>
+        
         <div className="search-result-div">
           <SearchResults />
         </div>
-        <div className="total-values-div">
+        <div className={"grocery-list-div" + " " + list_status}>
+          <SmallTitle>Added items</SmallTitle>
+          <AddedItems />
+        </div>
+        <div className={"total-values-div" + " " + list_status}>
           <SmallTitle customClass="wide">
             {" "}
             Daily values of list {listID}{" "}
