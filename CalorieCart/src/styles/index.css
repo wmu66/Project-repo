@@ -1,5 +1,5 @@
 :root {
-  --accentcolor1: #3D5A80;
+  --accentcolor: #3D5A80;
   --accentcolor1-darker: #2D475E;
   --accentcolor2: #EE6C4D;
   --accentcolor2-darker: #D85F46;
@@ -287,7 +287,7 @@ body {
 
   :root {
     --font-smaller: 0.75rem;
-    --font-small: 0.85rem;
+    --font-small: 1rem;
     --font-base: 1.2rem;
     --font-large: 1.40rem;
     --font-larger: 1.75rem;
@@ -299,7 +299,7 @@ body {
 @media (max-height: 1150px) {
   :root {
     --font-smaller: 0.65rem;
-    --font-small: 0.75rem;
+    --font-small: 0.9rem;
     --font-base: 1rem;
     --font-large: 1.25rem;
     --font-larger: 1.5rem;

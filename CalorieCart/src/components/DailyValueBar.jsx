@@ -19,7 +19,11 @@ const DailyValueBar = ({
       bar_color = "green"
   }
 
-  else if (value < 30) {
+  else if (value > 40) {
+      bar_color = "too-much"
+  }
+
+  else {
       bar_color = "not-enough"
   }
 
