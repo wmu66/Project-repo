@@ -16,11 +16,27 @@ const StatsPage = () => {
   const navigate = useNavigate();
   const [seed, setSeed] = useState(1);
   const reset = () => {
-       setSeed(Math.random());
-   }
+    setSeed(Math.random());
+  };
+
+  const calorie_text =
+    "Calories are crucial to your diet, as they contain the energy that your body needs to function properly. If your goal is to maintain your weight, then ideally you should be eating as much calories in a day as you burn. While if you would like to lose weight, then the best way is by eating less than you burn. If you eat more calories than you burn, then however you will likely gain weight. To get better recommendations you can change your target calorie value to align with how much exercise you do in a day.";
+
+  const fats_text =
+    "A small amount of fat is an essential part of a healthy diet. Fat is crucial in helping your body absorb vitamins, such as A, D and E. These three vitamins can only be absorbed with the help of fats. However, too much fat can be a serious health risk, as it increases your cholasterol, which in turn increases your risk of hearth disease. Importantly there are two types of fats, saturated and unsaturated fats. To maintain a healthy diet your goal should be to try to cut down on fats, especially saturated fats, which are especially unhealthy. ";
+
+  const carbs_text =
+    "Carbohydrates are the main fuel source for your body. Although, they often get a bad rap, they play an important role in your diet. Too much carbs however, are not good for your health, and can lead to weight gain. The right amount of carbs can hoewever, increase your energy and protect you against some diseases. Not all carbs are however, created equal. There are three main types, sugars, starches and technically fiber is also a carb. Fiber differs from the two, as most fiber can not be broken down by the body, and it is also an example of a healthy carbohydrate. For a healthy diet you should focus on food sources, such as whole grains, beans, peas and lentils, and limit your sugar intake.";
+
+  const protein_text =
+    "Proteins are crucial for your health. They are crucial in helping your body repair cells, and make new ones, and are crucially important in growth and development. Protein is crucial for increasing muscle mass and strength, which is especially important if you are workign on building muscle. It is good is also good for your bones. Protein is also helpful in weight control, as it can reduce cravings and your appetite. However, consuming too much protein can have side effects, such as dehydration, fatigue, nausea, but even cardiovascular diseases, liver and kidney injuries or blood vessel disorders. ";
+
+  const fiber_text =
+    "Dietary fiber is crucial for a healthy diet. There are two types, soluble and insoluble. Neither can be broken down well by your body, the difference comes from the fact that soluble fiber, unlike insoluble can dissolve in water. Fiber pass through the intestines, which helps in stimulating and aiding your digestion. This way it can prevent and relieve constapation. It can also help regulate blood sugar and lower cholesterol. Too much fiber can also have side effects, such as bloating, abdominal pain, diarrhea, temporary weight gain, or even constapation.  ";
+
   return (
     <>
-      <div  onClick={reset} onKeyUp={reset}>
+      <div onClick={reset} onKeyUp={reset}>
         <div className="header-footer header">
           <div className="header-with-return">
             <Button
@@ -44,9 +60,7 @@ const StatsPage = () => {
           <div className="stats-div">
             <div className="spider-graph-div">
               <h4>{"Check your list's stats!"}</h4>
-              <SpiderGraph 
-                test={seed}
-              />
+              <SpiderGraph test={seed} />
             </div>
             <div className="card-container">
               <ExpandingCard
@@ -55,23 +69,17 @@ const StatsPage = () => {
                 amount={getListAmounts().cals}
                 healthy_amount={getHealthAmounts().cals}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ultricies risus et cursus luctus. Fusce vestibulum malesuada
-                interdum. Quisque eget ornare metus, sed ullamcorper nisi. Etiam
-                sed sagittis odio, id aliquet justo. Aenean eget iaculis enim,
-                volutpat vestibulum arcu. Etiam pulvinar, nibh quis suscipit
-                tempor, ipsum tortor cursus purus, vel luctus ligula sapien in
-                metus. In hac habitasse platea dictumst. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Ut consequat sit amet
-                nulla eget venenatis. Nam et lorem placerat, vestibulum libero
-                quis, imperdiet dui. Integer at purus sollicitudin, efficitur
-                dolor non, fermentum dolor. Aenean placerat est quis dolor
-                faucibus, at commodo purus consequat. In eu sapien eu lectus
-                dignissim viverra. In hac habitasse platea dictumst. Quisque
-                ultrices justo eu leo accumsan ultrices. Vivamus sit amet tempus
-                massa, vitae mollis neque. Donec vulputate sed ipsum ut lobortis.
-                Phasellus velit dolor, scelerisque quis commodo vel, bibendum non
-                urna. Nunc a volutpat mi. Donec aliquet cursus viverra.
+                {calorie_text}
+                <br />
+                <br />
+                Sources: <br />
+                <a
+                  href="https://www.nhs.uk/live-well/healthy-weight/managing-your-weight/understanding-calories/"
+                  target="_blank"
+                >
+                  {" "}
+                  NHS
+                </a>{" "}
               </ExpandingCard>
               <ExpandingCard
                 nutrition_measurement="g"
@@ -79,23 +87,17 @@ const StatsPage = () => {
                 amount={getListAmounts().fats}
                 healthy_amount={getHealthAmounts().fats}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ultricies risus et cursus luctus. Fusce vestibulum malesuada
-                interdum. Quisque eget ornare metus, sed ullamcorper nisi. Etiam
-                sed sagittis odio, id aliquet justo. Aenean eget iaculis enim,
-                volutpat vestibulum arcu. Etiam pulvinar, nibh quis suscipit
-                tempor, ipsum tortor cursus purus, vel luctus ligula sapien in
-                metus. In hac habitasse platea dictumst. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Ut consequat sit amet
-                nulla eget venenatis. Nam et lorem placerat, vestibulum libero
-                quis, imperdiet dui. Integer at purus sollicitudin, efficitur
-                dolor non, fermentum dolor. Aenean placerat est quis dolor
-                faucibus, at commodo purus consequat. In eu sapien eu lectus
-                dignissim viverra. In hac habitasse platea dictumst. Quisque
-                ultrices justo eu leo accumsan ultrices. Vivamus sit amet tempus
-                massa, vitae mollis neque. Donec vulputate sed ipsum ut lobortis.
-                Phasellus velit dolor, scelerisque quis commodo vel, bibendum non
-                urna. Nunc a volutpat mi. Donec aliquet cursus viverra.
+                {fats_text}
+                <br />
+                <br />
+                Sources: <br />
+                <a
+                  href="https://www.nhs.uk/live-well/eat-well/food-types/different-fats-nutrition/"
+                  target="_blank"
+                >
+                  {" "}
+                  NHS
+                </a>{" "}
               </ExpandingCard>
               <ExpandingCard
                 nutrition_measurement="g"
@@ -103,23 +105,25 @@ const StatsPage = () => {
                 amount={getListAmounts().carbs}
                 healthy_amount={getHealthAmounts().carbs}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ultricies risus et cursus luctus. Fusce vestibulum malesuada
-                interdum. Quisque eget ornare metus, sed ullamcorper nisi. Etiam
-                sed sagittis odio, id aliquet justo. Aenean eget iaculis enim,
-                volutpat vestibulum arcu. Etiam pulvinar, nibh quis suscipit
-                tempor, ipsum tortor cursus purus, vel luctus ligula sapien in
-                metus. In hac habitasse platea dictumst. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Ut consequat sit amet
-                nulla eget venenatis. Nam et lorem placerat, vestibulum libero
-                quis, imperdiet dui. Integer at purus sollicitudin, efficitur
-                dolor non, fermentum dolor. Aenean placerat est quis dolor
-                faucibus, at commodo purus consequat. In eu sapien eu lectus
-                dignissim viverra. In hac habitasse platea dictumst. Quisque
-                ultrices justo eu leo accumsan ultrices. Vivamus sit amet tempus
-                massa, vitae mollis neque. Donec vulputate sed ipsum ut lobortis.
-                Phasellus velit dolor, scelerisque quis commodo vel, bibendum non
-                urna. Nunc a volutpat mi. Donec aliquet cursus viverra.
+                {carbs_text}
+                <br />
+                <br />
+                Sources: <br />
+                <a
+                  href="https://my.clevelandclinic.org/health/articles/15416-carbohydrates"
+                  target="_blank"
+                >
+                  {" "}
+                  Cleveland Clinic
+                </a>{" "}
+                <br />
+                <a
+                  href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/carbohydrates/art-20045705"
+                  target="_blank"
+                >
+                  {" "}
+                  Mayo Clinic
+                </a>{" "}
               </ExpandingCard>
               <ExpandingCard
                 nutrition_measurement="g"
@@ -127,23 +131,25 @@ const StatsPage = () => {
                 amount={getListAmounts().proteins}
                 healthy_amount={getHealthAmounts().proteins}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ultricies risus et cursus luctus. Fusce vestibulum malesuada
-                interdum. Quisque eget ornare metus, sed ullamcorper nisi. Etiam
-                sed sagittis odio, id aliquet justo. Aenean eget iaculis enim,
-                volutpat vestibulum arcu. Etiam pulvinar, nibh quis suscipit
-                tempor, ipsum tortor cursus purus, vel luctus ligula sapien in
-                metus. In hac habitasse platea dictumst. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Ut consequat sit amet
-                nulla eget venenatis. Nam et lorem placerat, vestibulum libero
-                quis, imperdiet dui. Integer at purus sollicitudin, efficitur
-                dolor non, fermentum dolor. Aenean placerat est quis dolor
-                faucibus, at commodo purus consequat. In eu sapien eu lectus
-                dignissim viverra. In hac habitasse platea dictumst. Quisque
-                ultrices justo eu leo accumsan ultrices. Vivamus sit amet tempus
-                massa, vitae mollis neque. Donec vulputate sed ipsum ut lobortis.
-                Phasellus velit dolor, scelerisque quis commodo vel, bibendum non
-                urna. Nunc a volutpat mi. Donec aliquet cursus viverra.
+                {protein_text}
+                <br />
+                <br />
+                Sources: <br />
+                <a
+                  href="https://www.medicalnewstoday.com/articles/322825#recommended-protein-intake"
+                  target="_blank"
+                >
+                  {" "}
+                  MedicalNewsToday
+                </a>{" "}
+                <br />
+                <a
+                  href="https://www.healthline.com/nutrition/10-reasons-to-eat-more-protein#TOC_TITLE_HDR_2"
+                  target="_blank"
+                >
+                  {" "}
+                  Healthline
+                </a>{" "}
               </ExpandingCard>
               <ExpandingCard
                 nutrition_measurement="g"
@@ -151,23 +157,33 @@ const StatsPage = () => {
                 amount={getListAmounts().fibers}
                 healthy_amount={getHealthAmounts().fibers}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ultricies risus et cursus luctus. Fusce vestibulum malesuada
-                interdum. Quisque eget ornare metus, sed ullamcorper nisi. Etiam
-                sed sagittis odio, id aliquet justo. Aenean eget iaculis enim,
-                volutpat vestibulum arcu. Etiam pulvinar, nibh quis suscipit
-                tempor, ipsum tortor cursus purus, vel luctus ligula sapien in
-                metus. In hac habitasse platea dictumst. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Ut consequat sit amet
-                nulla eget venenatis. Nam et lorem placerat, vestibulum libero
-                quis, imperdiet dui. Integer at purus sollicitudin, efficitur
-                dolor non, fermentum dolor. Aenean placerat est quis dolor
-                faucibus, at commodo purus consequat. In eu sapien eu lectus
-                dignissim viverra. In hac habitasse platea dictumst. Quisque
-                ultrices justo eu leo accumsan ultrices. Vivamus sit amet tempus
-                massa, vitae mollis neque. Donec vulputate sed ipsum ut lobortis.
-                Phasellus velit dolor, scelerisque quis commodo vel, bibendum non
-                urna. Nunc a volutpat mi. Donec aliquet cursus viverra.
+                {fiber_text}
+                <br />
+                <br />
+                Sources: <br />
+                <a
+                  href="https://www.healthline.com/health/food-nutrition/too-much-fiber"
+                  target="_blank"
+                >
+                  {" "}
+                  Healthline
+                </a>{" "}
+                <br />
+                <a
+                  href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/fiber/art-20043983"
+                  target="_blank"
+                >
+                  {" "}
+                  Mayo Clinic
+                </a>{" "}
+                <br />
+                <a
+                  href="https://my.clevelandclinic.org/health/articles/15416-carbohydrates"
+                  target="_blank"
+                >
+                  {" "}
+                  Cleveland Clinic
+                </a>
               </ExpandingCard>
             </div>
           </div>
