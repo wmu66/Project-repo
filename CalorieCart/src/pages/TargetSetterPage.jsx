@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const TargetSetterPage = () => {
   const navigate = useNavigate();
   const go_back = () => {
-    navigate("/");
+    navigate("/create_list");
   };
   return (
     <>
@@ -23,7 +23,7 @@ const TargetSetterPage = () => {
             Or use one of the presets.{" "}
           </h3>
           <Button customClass="dark" onClick={go_back}>
-            Go back
+            Continue to list creation
           </Button>
         </div>
         <ValueSetter customClass={"target-setter-page"}></ValueSetter>

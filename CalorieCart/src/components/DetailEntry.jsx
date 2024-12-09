@@ -10,11 +10,11 @@ const DetailEntry = () => {
   const onClick = () => {
     const weight_int = Math.round(parseInt(weight, 10));
     const height_int = Math.round(parseInt(height, 10));
-    let isWeightValid = true;
-    let isHeightValid = true;
+    //let isWeightValid = true;
+    //let isHeightValid = true;
 
     if ((weight_int > 0) & (height_int > 0)) {
-      navigate("/create_list");
+      navigate("/targets");
     }
   };
 
@@ -31,10 +31,6 @@ const DetailEntry = () => {
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
-
-  const navigate_to_targets = () => {
-    navigate("/targets");
-  };
   const handleWeightChange = (event) => {
     const weight = event.target.value;
     const weight_int = Math.round(parseInt(weight, 10));
@@ -47,7 +43,7 @@ const DetailEntry = () => {
   };
   const handleHeightCHange = (event) => {
     const height = event.target.value;
-    const height_int = Math.round(parseInt(weight, 10));
+    //const height_int = Math.round(parseInt(weight, 10));
     setHeight(height);
     if (height <= 0) {
       setIsHeightValid("active");
@@ -110,7 +106,6 @@ const DetailEntry = () => {
           isDefaultSelected={isDefaultSelected}
           setIsDefaultSelected={setIsDefaultSelected}
         ></DropDownMenu>
-        <Button onClick={navigate_to_targets}>Set target values</Button>
         <Button onClick={onClick} disabled={form_not_filled_in}>
           Create your first list...
         </Button>
