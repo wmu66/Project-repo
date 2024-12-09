@@ -55,6 +55,10 @@ body {
   justify-content: center;
 }
 
+.main-content.target-setter {
+  align-items: center;
+}
+
 .main-content.list_editor {
   display: flex;
   justify-content: space-between;
@@ -242,7 +246,19 @@ body {
   background: var(--accentcolor2-darker);
 }
 
-
+.target-setter-go-back-div {
+  display: flex;
+  flex-direction: column;
+  max-width: 20%;
+  border: 5px solid var(--accentcolor);
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
 @media (max-height: 1300px) {
   .detail-entry {

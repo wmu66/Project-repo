@@ -23,40 +23,46 @@ const DetailEntry = () => {
   // States for name, weight, and gender selection
   const [name, setName] = useState("");
   const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("")
+  const [height, setHeight] = useState("");
   const [isDefaultSelected, setIsDefaultSelected] = useState(true); //checks whether a gender has been picked
   const [weightValid, setIsWeightValid] = useState(""); // controls weather warning that weight is invalid should be shown
-  const [heightValid, setIsHeightValid] = useState("")
+  const [heightValid, setIsHeightValid] = useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
 
+  const navigate_to_targets = () => {
+    navigate("/targets");
+  };
   const handleWeightChange = (event) => {
     const weight = event.target.value;
     const weight_int = Math.round(parseInt(weight, 10));
     setWeight(weight);
     if (weight_int <= 0) {
       setIsWeightValid("active");
+    } else {
+      setIsWeightValid("inactive");
     }
-    else {
-      setIsWeightValid("inactive")
-    }
-    
   };
   const handleHeightCHange = (event) => {
     const height = event.target.value;
     const height_int = Math.round(parseInt(weight, 10));
     setHeight(height);
-    if (height <= 0){
+    if (height <= 0) {
       setIsHeightValid("active");
-    }
-    else {
+    } else {
       setIsHeightValid("inactive");
     }
-  }
+  };
 
-  const form_not_filled_in = name == "" || weight == "" || isDefaultSelected || height == "" || heightValid =="active" || weightValid == "active"; //false if all four form elements have been filled in
+  const form_not_filled_in =
+    name == "" ||
+    weight == "" ||
+    isDefaultSelected ||
+    height == "" ||
+    heightValid == "active" ||
+    weightValid == "active"; //false if all four form elements have been filled in
   return (
     <>
       <div className="detail-entry">
@@ -79,7 +85,10 @@ const DetailEntry = () => {
           onChange={handleWeightChange}
           step="1"
         ></input>
-        <div className={"alert alert-danger weight " + weightValid} role="alert">
+        <div
+          className={"alert alert-danger weight " + weightValid}
+          role="alert"
+        >
           Weight must be positive
         </div>
         <input
@@ -89,7 +98,10 @@ const DetailEntry = () => {
           onChange={handleHeightCHange}
           step="1"
         ></input>
-        <div className={"alert alert-danger weight " + heightValid} role="alert">
+        <div
+          className={"alert alert-danger weight " + heightValid}
+          role="alert"
+        >
           Height must be positive
         </div>
         <DropDownMenu
@@ -98,6 +110,7 @@ const DetailEntry = () => {
           isDefaultSelected={isDefaultSelected}
           setIsDefaultSelected={setIsDefaultSelected}
         ></DropDownMenu>
+        <Button onClick={navigate_to_targets}>Set target values</Button>
         <Button onClick={onClick} disabled={form_not_filled_in}>
           Create your first list...
         </Button>

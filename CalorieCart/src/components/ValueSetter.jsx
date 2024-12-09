@@ -3,8 +3,9 @@ import Button from "./Button";
 import CustomValue from "./CustomValue";
 import { useState } from "react";
 import { getHealthAmounts, updateHealthAmounts } from "./Data";
+import PropTypes from "prop-types";
 
-const ValueSetter = () => {
+const ValueSetter = ({ customClass }) => {
   const healthy_values = {
     Calories: [getHealthAmounts().cals, "kcal", 100, 1000, 3000], // nutrition, healthy amount, measurement, step size, min and max. Step size is used for manual changing
     Fats: [getHealthAmounts().fats, "g", 5, 20, 120],
@@ -56,7 +57,7 @@ const ValueSetter = () => {
     Object.keys(newValues).forEach((key) => {
       newValues[key][0] *= presetValues[key];
       newValues[key][0] = Math.round(newValues[key][0]);
-      updateValue(key, newValues[key][0])
+      updateValue(key, newValues[key][0]);
     });
     //setCurrentValues(newValues);
   };
@@ -66,7 +67,7 @@ const ValueSetter = () => {
     Carbohydrates: "carbs",
     Protein: "proteins",
     Fiber: "fibers",
-  }
+  };
   const updateValue = (nutrition, newAmount) => {
     //use to update the healthy values
     updateHealthAmounts(translator[nutrition], newAmount);
@@ -85,39 +86,45 @@ const ValueSetter = () => {
 
   return (
     <>
-      <div>
-        <SmallTitle customClass="w300">Target values</SmallTitle>
-      </div>
-      <div className="editor-column-div medium">
-        {Object.entries(currentValues).map(
-          ([nutrition, [amount, measurement, stepsize, min, max]]) => (
-            <CustomValue
-              key={nutrition}
-              nutrition={nutrition}
-              value={amount}
-              measurement={measurement}
-              stepsize={stepsize}
-              min={min}
-              max={max}
-              onChange={updateValue}
-            />
-          )
-        )}
-        <SmallTitle customClass="contributing medium bright">
-          Presets
-        </SmallTitle>
-        {Object.entries(presets).map(([preset, onClick]) => (
-          <Button
-            key={preset}
-            onClick={() => onClick()}
-            customClass="w260 dark"
-          >
-            {preset}
-          </Button>
-        ))}
+      <div className={customClass}>
+        <div>
+          <SmallTitle customClass="w300">Target values</SmallTitle>
+        </div>
+        <div className="editor-column-div medium">
+          {Object.entries(currentValues).map(
+            ([nutrition, [amount, measurement, stepsize, min, max]]) => (
+              <CustomValue
+                key={nutrition}
+                nutrition={nutrition}
+                value={amount}
+                measurement={measurement}
+                stepsize={stepsize}
+                min={min}
+                max={max}
+                onChange={updateValue}
+              />
+            )
+          )}
+          <SmallTitle customClass="contributing medium bright">
+            Presets
+          </SmallTitle>
+          {Object.entries(presets).map(([preset, onClick]) => (
+            <Button
+              key={preset}
+              onClick={() => onClick()}
+              customClass="w260 dark"
+            >
+              {preset}
+            </Button>
+          ))}
+        </div>
       </div>
     </>
   );
+};
+
+SmallTitle.propTypes = {
+  customClass: PropTypes.string, //custom class used for target setter page
 };
 
 export default ValueSetter;

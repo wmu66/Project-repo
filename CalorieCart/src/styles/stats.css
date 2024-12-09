@@ -178,6 +178,25 @@
   .nutrition-card.open .card-toggle .chevron {
     display: none
   }
+  
+  .target-setter-page .small-title.w300 {
+    display: none 
+  }
+
+  .target-setter-page .editor-column-div {
+    margin-top: 15%;
+    height: 60%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accentcolor3);
+    border: solid 5px var(--accentcolor1);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 30px;
+  }
+
+  .target-setter-page .custom-value-setter-div {
+    color: black;
+  }
 
   @media (max-height: 1250px) {
     .card-container {
