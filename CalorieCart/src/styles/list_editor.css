@@ -352,6 +352,11 @@
     background-color: #BB342F; 
   }
 
+  .daily-value-bar.max progress::-webkit-progress-value {
+    background-color: #BB342F; 
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 
   .bar-label{
     display: flex;
