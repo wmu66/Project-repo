@@ -11,7 +11,7 @@ const DailyValueBar = ({
   let relative_difference = Math.round((amount / healthy_amount - 1) * 100);
 
   let value = relative_difference;
-  value = Math.min(75, Math.max(35 + value, 0)); // I changed it to be smaller :), bounds are still 75 and 0
+  value = Math.min(70, Math.max(35 + value, 1)); // I changed it to be smaller :), bounds are still 75 and 0
 
   let bar_color = ""
 
@@ -20,7 +20,10 @@ const DailyValueBar = ({
   }
 
   else if (value > 40) {
-      bar_color = "too-much"
+    bar_color = "too-much"
+    if (value >= 70) {
+      bar_color = "max"
+    }
   }
 
   else {
