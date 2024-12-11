@@ -4,7 +4,7 @@ import { getList, getHealthAmounts, getListAmounts } from "./Data";
 
 const SpiderGraph = (test) => {
   const chartRef = useRef(null);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       const options = {
@@ -16,11 +16,52 @@ const SpiderGraph = (test) => {
           {
             name: "Daily stats",
             data: [
-              Math.max(-25, Math.min(50, parseInt(100*getListAmounts().cals/getHealthAmounts().cals)-100)), 
-              Math.max(-25, Math.min(50, parseInt(100*getListAmounts().fats/getHealthAmounts().fats)-100)), 
-              Math.max(-25, Math.min(50, parseInt(100*getListAmounts().fibers/getHealthAmounts().fibers)-100)), 
-              Math.max(-25, Math.min(50, parseInt(100*getListAmounts().proteins/getHealthAmounts().proteins)-100)), 
-              Math.max(-25, Math.min(50, parseInt(100*getListAmounts().carbs/getHealthAmounts().carbs)-100))
+              Math.max(
+                -25,
+                Math.min(
+                  35,
+                  parseInt(
+                    (100 * getListAmounts().cals) / getHealthAmounts().cals
+                  ) - 100
+                )
+              ),
+              Math.max(
+                -25,
+                Math.min(
+                  35,
+                  parseInt(
+                    (100 * getListAmounts().fats) / getHealthAmounts().fats
+                  ) - 100
+                )
+              ),
+              Math.max(
+                -25,
+                Math.min(
+                  35,
+                  parseInt(
+                    (100 * getListAmounts().fibers) / getHealthAmounts().fibers
+                  ) - 100
+                )
+              ),
+              Math.max(
+                -25,
+                Math.min(
+                  35,
+                  parseInt(
+                    (100 * getListAmounts().proteins) /
+                      getHealthAmounts().proteins
+                  ) - 100
+                )
+              ),
+              Math.max(
+                -25,
+                Math.min(
+                  35,
+                  parseInt(
+                    (100 * getListAmounts().carbs) / getHealthAmounts().carbs
+                  ) - 100
+                )
+              ),
             ],
           },
         ],
@@ -52,7 +93,7 @@ const SpiderGraph = (test) => {
             },
           },
         },
-  
+
         xaxis: {
           categories: ["Calories", "Fats", "Fiber", "Protein", "Carbohydrates"],
           labels: {
@@ -103,9 +144,9 @@ const SpiderGraph = (test) => {
           offsetY: -80,
         },
       };
-      chart.updateOptions(options)
+      chart.updateOptions(options);
     }, 500);
-    
+
     const options = {
       series: [
         {
@@ -115,11 +156,52 @@ const SpiderGraph = (test) => {
         {
           name: "Daily stats",
           data: [
-            Math.max(-25, Math.min(50, parseInt(100*getListAmounts().cals/getHealthAmounts().cals)-100)), 
-            Math.max(-25, Math.min(50, parseInt(100*getListAmounts().fats/getHealthAmounts().fats)-100)), 
-            Math.max(-25, Math.min(50, parseInt(100*getListAmounts().fibers/getHealthAmounts().fibers)-100)), 
-            Math.max(-25, Math.min(50, parseInt(100*getListAmounts().proteins/getHealthAmounts().proteins)-100)), 
-            Math.max(-25, Math.min(50, parseInt(100*getListAmounts().carbs/getHealthAmounts().carbs)-100))
+            Math.max(
+              -25,
+              Math.min(
+                50,
+                parseInt(
+                  (100 * getListAmounts().cals) / getHealthAmounts().cals
+                ) - 100
+              )
+            ),
+            Math.max(
+              -25,
+              Math.min(
+                50,
+                parseInt(
+                  (100 * getListAmounts().fats) / getHealthAmounts().fats
+                ) - 100
+              )
+            ),
+            Math.max(
+              -25,
+              Math.min(
+                50,
+                parseInt(
+                  (100 * getListAmounts().fibers) / getHealthAmounts().fibers
+                ) - 100
+              )
+            ),
+            Math.max(
+              -25,
+              Math.min(
+                50,
+                parseInt(
+                  (100 * getListAmounts().proteins) /
+                    getHealthAmounts().proteins
+                ) - 100
+              )
+            ),
+            Math.max(
+              -25,
+              Math.min(
+                50,
+                parseInt(
+                  (100 * getListAmounts().carbs) / getHealthAmounts().carbs
+                ) - 100
+              )
+            ),
           ],
         },
       ],

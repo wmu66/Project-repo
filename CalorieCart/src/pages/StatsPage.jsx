@@ -9,10 +9,14 @@ import SpiderGraph from "../components/SpiderGraph.jsx";
 import { getHealthAmounts, getListAmounts } from "../components/Data.jsx";
 import ExpandingCard from "../components/ExpandingCard.jsx";
 import { useState } from "react";
+import Dialog from "../components/Dialog.jsx";
+import { useRef } from "react";
 
 const StatsPage = () => {
   const { listID } = useParams();
+  const dialogRef = useRef();
   const goBack = () => navigate("/list_editor/" + listID);
+  let daynumber = 7; //7 is the default value
   const navigate = useNavigate();
   const [seed, setSeed] = useState(1);
   const reset = () => {
@@ -63,6 +67,28 @@ const StatsPage = () => {
               <SpiderGraph test={seed} />
             </div>
             <div className="card-container">
+              <div className="day-number-changer dark">
+                <h2>
+                  Daily values calculated with the list length of
+                  <span style={{ color: "var(--accentcolor2)" }}>
+                    {" " + daynumber + " "}
+                  </span>
+                  days:
+                </h2>
+                <Button
+                  size="small"
+                  background="dark"
+                  onClick={() => dialogRef.current?.showModal()}
+                >
+                  Edit
+                </Button>
+                <Dialog
+                  ref={dialogRef}
+                  text="Set day amount"
+                  ok_button_text="Set"
+                  input_type="number"
+                />
+              </div>
               <ExpandingCard
                 nutrition_measurement="kcal"
                 nutrition_name="Calories"

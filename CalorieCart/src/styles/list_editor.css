@@ -288,7 +288,15 @@
     align-items: center;
   }
 
- 
+
+  .day-number-changer.dark {
+    background-color: var(--accentcolor1);
+    border-radius: 10px;
+    width: 95%;
+    padding: 15px;
+    margin: 10px;
+    border: none;
+  }
 
   .day-number-changer h2{
     font-size: var(--font-large);
@@ -390,7 +398,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid var(--accentcolor3);
+    border: 5px solid var(--accentcolor3-darker);
     border-radius: 15px;
     line-height: normal;
     cursor: pointer;
