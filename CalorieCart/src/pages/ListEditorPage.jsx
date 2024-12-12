@@ -9,7 +9,7 @@ import Button from "../components/Button.jsx";
 import DailyValuesRightSide from "../components/DailyValuesRightSide.jsx";
 import SearchResults from "../components/SearchResults.jsx";
 import { useState } from "react";
-import getList from "../components/Data.jsx"
+import getList from "../components/Data.jsx";
 
 const ListEditorPage = () => {
   const { listID } = useParams(); //gets the listID from the URL
@@ -18,68 +18,65 @@ const ListEditorPage = () => {
   const goBack = () => navigate("/create_list");
   const [seed, setSeed] = useState(1);
   const reset = () => {
-       setSeed(Math.random());
-   }
+    setSeed(Math.random());
+  };
 
+  const items = getList();
+  let list_status = "disabled";
+  let list_len = 0;
 
-   const items = getList();
-   let list_status = "disabled"
-   let list_len = 0;
-
-   for (const [key, value] of Object.entries(items)) {
+  for (const [key, value] of Object.entries(items)) {
     if ("amount" in value) {
-        list_len += value["amount"]
+      list_len += value["amount"];
     }
   }
-
-   if (list_len == 0) {
-     list_status = "disabled"
-   }
-   else {
-    list_status = ""
-   }
+  if (list_len == 0) {
+    list_status = "disabled";
+  } else {
+    list_status = "";
+  }
 
   return (
     <>
-    <div  onClick={reset} onKeyUp={reset}>
-      <div className="header-footer header">
-        <div className="header-with-return">
-          <Button
-            size="medium"
-            margin="no-margin"
-            background="dark"
-            onClick={goBack}
-          >
-            List creator
-          </Button>
-          <h1 className="header-text">
-            CalorieCart: Create your healthy, nutritious grocery list today!
-          </h1>
+      <div onClick={reset} onKeyUp={reset}>
+        <div className="header-footer header">
+          <div className="header-with-return">
+            <Button
+              size="medium"
+              margin="no-margin"
+              background="dark"
+              onClick={goBack}
+            >
+              List creator
+            </Button>
+            <h1 className="header-text">
+              CalorieCart: Create your healthy, nutritious grocery list today!
+            </h1>
+          </div>
+          <AccountEditButton />
         </div>
-        <AccountEditButton />
-      </div>
-      <div className="main-content list_editor">
-        <div className="filter-div">
-          <SmallTitle>Filter and search</SmallTitle>
-          <SearchAndFilter />
+        <div className="main-content list_editor">
+          <div className="filter-div">
+            <SmallTitle>Filter and search</SmallTitle>
+            <SearchAndFilter />
+          </div>
+
+          <div className="search-result-div">
+            <SearchResults />
+          </div>
+          <div className={"grocery-list-div" + " " + list_status}>
+            <SmallTitle>Added items</SmallTitle>
+            <AddedItems />
+          </div>
+          <div className={"total-values-div" + " " + list_status}>
+            <SmallTitle customClass="wide">
+              {" "}
+              Daily values of list {listID}{" "}
+            </SmallTitle>
+            <DailyValuesRightSide />
+          </div>
         </div>
-        
-        <div className="search-result-div">
-          <SearchResults />
-        </div>
-        <div className={"grocery-list-div" + " " + list_status}>
-          <SmallTitle>Added items</SmallTitle>
-          <AddedItems />
-        </div>
-        <div className={"total-values-div" + " " + list_status}>
-          <SmallTitle customClass="wide">
-            {" "}
-            Daily values of list {listID}{" "}
-          </SmallTitle>
-          <DailyValuesRightSide />
-        </div>
-      </div>
-      {/* <div className="header-footer footer" /> */}
+        {/* <div className="header-footer footer" /> */}
       </div>
     </>
   );
