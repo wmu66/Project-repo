@@ -10,6 +10,7 @@ const TopContributors = () => {
   let carbList = [];
   let fiberList = [];
   for (let i in list) {
+    console.log(i);
     calList.push({
       name: i,
       amount: list[i]["Caloric Value"],
