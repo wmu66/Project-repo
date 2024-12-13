@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {addToList} from "./Data.jsx";
+import food_icon from "../assets/food-icon.svg"
 
 const SearchResultElement = ({ data }) => {
   function addList(){
@@ -10,7 +11,7 @@ const SearchResultElement = ({ data }) => {
       <div onClick={addList}>
         <div className="search-result-element">
           <div className="image-container">
-            <img src={data["img"]} />
+            <img src={food_icon} />
           </div>
           <h3>{data["name"]}</h3>
           <p>

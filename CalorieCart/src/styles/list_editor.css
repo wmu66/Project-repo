@@ -419,6 +419,7 @@
     height: 120px;
     max-width: 150px;
     overflow: hidden;
+    padding: 5px;
     border-radius: 5px;
   }
 

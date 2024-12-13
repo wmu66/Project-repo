@@ -5,6 +5,7 @@ import { useState } from "react";
 import {getFilteredList} from "./Data.jsx"
 
 
+
 const SearchResults = () => {
   const SortOptions = ["Calories", "Fat", "Protein", "Carbohydrates", "Fiber"];
   const [arrowDirection, setArrowDirection] = useState("up");
@@ -23,8 +24,7 @@ const SearchResults = () => {
       Fat: filteredList[i]["Fat"],
       Protein: filteredList[i]["Protein"],
       Fiber: filteredList[i]["Dietary Fiber"],
-      name: i,
-      img: "https://static.ah.nl/dam/product/AHI_4354523130303337393338?revLabel=1&rendition=800x800_JPG_Q90&fileType=binary",
+      name: i
     };
     items.push(<SearchResultElement data={item} />)
   }
