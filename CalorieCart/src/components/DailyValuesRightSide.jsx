@@ -6,7 +6,7 @@ import DailyValueBar from "./DailyValueBar";
 import {getList, getHealthAmounts, getListAmounts} from "./Data.jsx";
 
 const DailyValuesRightSide = () => {
-  let daynumber = 7; //7 is the default value
+  let daynumber = 1; //7 is the default value
   const dialogRef = useRef();
   const navigate = useNavigate();
   const { listID } = useParams();
@@ -21,7 +21,7 @@ const DailyValuesRightSide = () => {
           <h2>
             List for{" "}
             <span style={{ color: "var(--accentcolor2)" }}>{daynumber}</span>{" "}
-            days
+            day
           </h2>
           <Button
             size="small"
