@@ -29,8 +29,11 @@ const StatsPage = () => {
   const fats_text =
     "A small amount of fat is an essential part of a healthy diet. Fat is crucial in helping your body absorb vitamins, such as A, D and E. These three vitamins can only be absorbed with the help of fats. However, too much fat can be a serious health risk, as it increases your cholasterol, which in turn increases your risk of hearth disease. Importantly there are two types of fats, saturated and unsaturated fats. To maintain a healthy diet your goal should be to try to cut down on fats, especially saturated fats, which are especially unhealthy. ";
 
-  const carbs_text =
+    const carbs_text =
     "Carbohydrates are the main fuel source for your body. Although, they often get a bad rap, they play an important role in your diet. Too much carbs however, are not good for your health, and can lead to weight gain. The right amount of carbs can hoewever, increase your energy and protect you against some diseases. Not all carbs are however, created equal. There are three main types, sugars, starches and technically fiber is also a carb. Fiber differs from the two, as most fiber can not be broken down by the body, and it is also an example of a healthy carbohydrate. For a healthy diet you should focus on food sources, such as whole grains, beans, peas and lentils, and limit your sugar intake.";
+
+    const sugars_text =
+    "bla bla bla";
 
   const protein_text =
     "Proteins are crucial for your health. They are crucial in helping your body repair cells, and make new ones, and are crucially important in growth and development. Protein is crucial for increasing muscle mass and strength, which is especially important if you are workign on building muscle. It is good is also good for your bones. Protein is also helpful in weight control, as it can reduce cravings and your appetite. However, consuming too much protein can have side effects, such as dehydration, fatigue, nausea, but even cardiovascular diseases, liver and kidney injuries or blood vessel disorders. ";
@@ -149,6 +152,32 @@ const StatsPage = () => {
                 >
                   {" "}
                   Mayo Clinic
+                </a>{" "}
+              </ExpandingCard>
+              <ExpandingCard
+                nutrition_measurement="g"
+                nutrition_name="Sugars"
+                amount={getListAmounts().sugars}
+                healthy_amount={getHealthAmounts().sugars}
+              >
+                {sugars_text}
+                <br />
+                <br />
+                Sources: <br />
+                <a
+                  href="https://google.com"
+                  target="_blank"
+                >
+                  {" "}
+                  Google
+                </a>{" "}
+                <br />
+                <a
+                  href="https://google.com"
+                  target="_blank"
+                >
+                  {" "}
+                  Google
                 </a>{" "}
               </ExpandingCard>
               <ExpandingCard

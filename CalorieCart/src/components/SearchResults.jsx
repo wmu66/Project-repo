@@ -25,6 +25,7 @@ const SearchResults = () => {
       Fat: filteredList[i]["Fat"],
       Protein: filteredList[i]["Protein"],
       Fiber: filteredList[i]["Dietary Fiber"],
+      Sugars: filteredList[i]["Sugars"],
       name: i
     };
     items.push(item)

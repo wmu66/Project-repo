@@ -7,6 +7,7 @@ let sliders = {
   Protein: [0, 1000],
   Carbohydrates: [0, 1000],
   "Dietary Fiber": [0, 1000],
+  Sugars: [0, 1000],
 };
 let searchText = "";
 let healthAmounts = {
@@ -14,6 +15,7 @@ let healthAmounts = {
   fats: 70,
   fibers: 30,
   carbs: 400,
+  sugars: 200,
   proteins: 55,
 };
 
@@ -27,6 +29,7 @@ export function getListAmounts() {
   let proteins = 0;
   let carbs = 0;
   let fibers = 0;
+  let sugars = 0;
   for (let i in curList) {
     if (curList[i].amount > 0) {
       cals += parseInt(curList[i]["Caloric Value"] * curList[i].amount);
@@ -34,6 +37,7 @@ export function getListAmounts() {
       proteins += parseInt(curList[i]["Protein"] * curList[i].amount);
       carbs += parseInt(curList[i]["Carbohydrates"] * curList[i].amount);
       fibers += parseInt(curList[i]["Dietary Fiber"] * curList[i].amount);
+      sugars += parseInt(curList[i]["Sugars"] * curList[i].amount);
     }
   }
   return {
@@ -42,6 +46,7 @@ export function getListAmounts() {
     proteins: proteins,
     carbs: carbs,
     fibers: fibers,
+    sugars: sugars
   };
 }
 
@@ -57,6 +62,7 @@ export function resetSlider() {
     Protein: [0, 1000],
     Carbohydrates: [0, 1000],
     "Dietary Fiber": [0, 1000],
+    Sugars: [0, 1000],
   };
 }
 export function getData() {

@@ -63,6 +63,12 @@ const DailyValuesRightSide = () => {
           healthy_amount={getHealthAmounts().carbs}
         />
         <DailyValueBar
+          nutrition_name="Sugars"
+          nutrition_measurement="g"
+          amount={getListAmounts().sugars}
+          healthy_amount={getHealthAmounts().sugars}
+        />
+        <DailyValueBar
           nutrition_name="Fiber"
           nutrition_measurement="g"
           amount={getListAmounts().fibers}

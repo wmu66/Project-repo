@@ -10,6 +10,7 @@ const ValueSetter = ({ customClass }) => {
     Calories: [getHealthAmounts().cals, "kcal", 100, 1000, 3000], // nutrition, healthy amount, measurement, step size, min and max. Step size is used for manual changing
     Fats: [getHealthAmounts().fats, "g", 5, 20, 120],
     Carbohydrates: [getHealthAmounts().carbs, "g", 10, 100, 450],
+    Sugars: [getHealthAmounts().sugars, "g", 10, 100, 450],
     Protein: [getHealthAmounts().proteins, "g", 5, 15, 100],
     Fiber: [getHealthAmounts().fibers, "g", 5, 10, 70],
   };
@@ -20,6 +21,7 @@ const ValueSetter = ({ customClass }) => {
     Calories: 1,
     Fats: 1,
     Carbohydrates: 1,
+    Sugars: 1,
     Protein: 1,
     Fiber: 1,
   }; //gives the multiplication used in the preset, 1 leaves values as they are
@@ -29,6 +31,7 @@ const ValueSetter = ({ customClass }) => {
     Protein: 1.3,
     Fats: 1.1,
     Carbohydrates: 1.2,
+    Sugars: 1.2,
     Fiber: 1,
   };
 
@@ -37,6 +40,7 @@ const ValueSetter = ({ customClass }) => {
     Protein: 1.2,
     Fats: 0.85,
     Carbohydrates: 0.8,
+    Sugars: 0.8,
     Fiber: 1.15,
   };
 
@@ -45,6 +49,7 @@ const ValueSetter = ({ customClass }) => {
     Protein: 1.1,
     Fats: 1.15,
     Carbohydrates: 1.3,
+    Sugars: 1.3,
     Fiber: 1,
   };
 
@@ -67,6 +72,7 @@ const ValueSetter = ({ customClass }) => {
     Carbohydrates: "carbs",
     Protein: "proteins",
     Fiber: "fibers",
+    Sugars: "sugars",
   };
   const updateValue = (nutrition, newAmount) => {
     //use to update the healthy values

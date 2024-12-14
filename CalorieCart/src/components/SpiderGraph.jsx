@@ -11,7 +11,7 @@ const SpiderGraph = (test) => {
         series: [
           {
             name: "Target",
-            data: [0, 0, 0, 0, 0],
+            data: [0, 0, 0, 0, 0, 0],
           },
           {
             name: "Daily stats",
@@ -62,6 +62,15 @@ const SpiderGraph = (test) => {
                   ) - 100
                 )
               ),
+              Math.max(
+                -25,
+                Math.min(
+                  35,
+                  parseInt(
+                    (100 * getListAmounts().sugars) / getHealthAmounts().sugars
+                  ) - 100
+                )
+              ),
             ],
           },
         ],
@@ -75,7 +84,7 @@ const SpiderGraph = (test) => {
           fontFamily: "Poppins",
           foreColor: "#000000",
           offsetY: -50,
-          offsetX: 26,
+          offsetX: 0,
         },
         colors: ["#EE6C4D", "#3D5A80"],
         fill: {
@@ -95,7 +104,7 @@ const SpiderGraph = (test) => {
         },
 
         xaxis: {
-          categories: ["Calories", "Fats", "Fiber", "Protein", "Carbohydrates"],
+          categories: ["Calories", "Fats", "Fiber", "Protein", "Carbohydrates", "Sugars"],
           labels: {
             style: {
               fontSize: "14px",
@@ -122,7 +131,7 @@ const SpiderGraph = (test) => {
           radar: {
             size: undefined,
             offsetX: 0,
-            offsetY: 0,
+            offsetY: -20,
             polygons: {
               strokeColors: "#4A6C9F",
               strokeWidth: 1,
@@ -151,7 +160,7 @@ const SpiderGraph = (test) => {
       series: [
         {
           name: "Target",
-          data: [0, 0, 0, 0, 0],
+          data: [0, 0, 0, 0, 0, 0],
         },
         {
           name: "Daily stats",
@@ -159,7 +168,7 @@ const SpiderGraph = (test) => {
             Math.max(
               -25,
               Math.min(
-                50,
+                35,
                 parseInt(
                   (100 * getListAmounts().cals) / getHealthAmounts().cals
                 ) - 100
@@ -168,7 +177,7 @@ const SpiderGraph = (test) => {
             Math.max(
               -25,
               Math.min(
-                50,
+                35,
                 parseInt(
                   (100 * getListAmounts().fats) / getHealthAmounts().fats
                 ) - 100
@@ -177,7 +186,7 @@ const SpiderGraph = (test) => {
             Math.max(
               -25,
               Math.min(
-                50,
+                35,
                 parseInt(
                   (100 * getListAmounts().fibers) / getHealthAmounts().fibers
                 ) - 100
@@ -186,7 +195,7 @@ const SpiderGraph = (test) => {
             Math.max(
               -25,
               Math.min(
-                50,
+                35,
                 parseInt(
                   (100 * getListAmounts().proteins) /
                     getHealthAmounts().proteins
@@ -196,9 +205,18 @@ const SpiderGraph = (test) => {
             Math.max(
               -25,
               Math.min(
-                50,
+                35,
                 parseInt(
                   (100 * getListAmounts().carbs) / getHealthAmounts().carbs
+                ) - 100
+              )
+            ),
+            Math.max(
+              -25,
+              Math.min(
+                35,
+                parseInt(
+                  (100 * getListAmounts().sugars) / getHealthAmounts().sugars
                 ) - 100
               )
             ),
@@ -215,7 +233,7 @@ const SpiderGraph = (test) => {
         fontFamily: "Poppins",
         foreColor: "#000000",
         offsetY: -50,
-        offsetX: 25,
+        offsetX: 0,
       },
       colors: ["#EE6C4D", "#3D5A80"],
       fill: {
@@ -235,7 +253,7 @@ const SpiderGraph = (test) => {
       },
 
       xaxis: {
-        categories: ["Calories", "Fats", "Fiber", "Protein", "Carbohydrates"],
+        categories: ["Calories", "Fats", "Fiber", "Protein", "Carbohydrates", "Sugars"],
         labels: {
           style: {
             fontSize: "14px",
@@ -262,7 +280,7 @@ const SpiderGraph = (test) => {
         radar: {
           size: undefined,
           offsetX: 0,
-          offsetY: 0,
+          offsetY: -20,
           polygons: {
             strokeColors: "#4A6C9F",
             strokeWidth: 1,

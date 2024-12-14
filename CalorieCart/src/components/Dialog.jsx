@@ -11,7 +11,7 @@ const Dialog = React.forwardRef(
             <button type="submit" formMethod="dialog" className="button small">
               Cancel
             </button>
-            <button type="submit" className="button small">
+            <button type="submit" formMethod="dialog" className="button small">
               {ok_button_text}
             </button>
           </div>

@@ -1,6 +1,8 @@
 import ListComponent from "./ListComponent";
 import { useRef } from "react";
 import Dialog from "./Dialog";
+import { useNavigate } from "react-router-dom";
+
 
 const ListLister = () => {
   const list_of_list = [
@@ -9,6 +11,10 @@ const ListLister = () => {
     ["List 2", "2"],
     ["List 3", "3"],
   ];
+
+  const handleSubmit = () => {
+    useNavigate("/list_editor/1");
+  }
 
   const dialogRef = useRef();
 
@@ -27,6 +33,7 @@ const ListLister = () => {
             ref={dialogRef}
             text="New list name"
             ok_button_text="Create"
+            onSubmit={handleSubmit()}
           />
         </div>
         {list_of_list.map(([name, id]) => (

@@ -8,6 +8,7 @@ const TopContributors = () => {
   let fatList = [];
   let proteinList = [];
   let carbList = [];
+  let sugarList = [];
   let fiberList = [];
   for (let i in list) {
     console.log(i);
@@ -25,6 +26,11 @@ const TopContributors = () => {
     carbList.push({
       name: i,
       amount: list[i]["Carbohydrates"],
+      count: list[i]["amount"],
+    });
+    sugarList.push({
+      name: i,
+      amount: list[i]["Sugars"],
       count: list[i]["amount"],
     });
     fiberList.push({
@@ -49,6 +55,10 @@ const TopContributors = () => {
     return b.amount - a.amount;
   });
   carbList = carbList.slice(0, 3);
+  sugarList.sort((a, b) => {
+    return b.amount - a.amount;
+  });
+  sugarList = carbList.slice(0, 3);
   fiberList.sort((a, b) => {
     return b.amount - a.amount;
   });
@@ -81,6 +91,15 @@ const TopContributors = () => {
         ))}
         <SmallTitle customClass="contributing medium">Carbohydrates</SmallTitle>
         {carbList.map((obj) => (
+          <ContributingItem
+            text={obj.name}
+            value={obj.amount}
+            measurement="g"
+            amount={obj.count}
+          />
+        ))}
+        <SmallTitle customClass="contributing medium">Sugar</SmallTitle>
+        {sugarList.map((obj) => (
           <ContributingItem
             text={obj.name}
             value={obj.amount}

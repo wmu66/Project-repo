@@ -56,6 +56,14 @@ const SearchAndFilter = () => {
           measurement="g"
           substance="Carbohydrates"
         />
+        <FilterSlider
+          min="0"
+          max="50"
+          step="1"
+          label="Sugars"
+          measurement="g"
+          substance="Sugars"
+        />
         <FilterSlider 
           min="0" 
           max="50" 
