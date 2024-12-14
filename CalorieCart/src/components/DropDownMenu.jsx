@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+
 const DropDownMenu = ({
   text,
   options,
@@ -7,6 +8,7 @@ const DropDownMenu = ({
   setIsDefaultSelected,
   custom_class,
 }) => {
+  
   //checking whether text has been provided. If yes, then text as a label will be written on the drop down menu, but will not be selectable.
   //If no text is provided then the first element of the array is selected, and is a valid option
 
@@ -56,5 +58,6 @@ DropDownMenu.propTypes = {
   setIsDefaultSelected: PropTypes.func,
   custom_class: PropTypes.string,
 };
+
 
 export default DropDownMenu;

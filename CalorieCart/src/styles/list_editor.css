@@ -398,7 +398,7 @@
   .search-result-element {
     height: 100%;
     width: 100%;
-    background-color: var(--accentcolor1);
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -407,7 +407,7 @@
     border-radius: 15px;
     line-height: normal;
     cursor: pointer;
-    color: white;
+    color: black;
     position: relative;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
   }

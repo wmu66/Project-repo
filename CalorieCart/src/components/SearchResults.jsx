@@ -2,7 +2,7 @@ import DropDownMenu from "./DropDownMenu";
 import SearchResultElement from "./SearchResultElement";
 import Arrow from "../assets/arrow.jsx";
 import { useState } from "react";
-import {getFilteredList} from "./Data.jsx"
+import {getFilteredList} from "./Data.jsx";
 
 
 
@@ -17,6 +17,7 @@ const SearchResults = () => {
   let filteredList = getFilteredList();
   //placeholder data for milk:
   let items = []
+  let sortItem = "Calories"
   for (let i in filteredList){
     let item = {
       Calories: filteredList[i]["Caloric Value"],
@@ -26,9 +27,13 @@ const SearchResults = () => {
       Fiber: filteredList[i]["Dietary Fiber"],
       name: i
     };
-    items.push(<SearchResultElement data={item} />)
+    items.push(item)
   }
-
+  if (arrowDirection === "up"){
+    items.sort((a, b) => {return a[sortItem]-b[sortItem]})
+  } else {
+    items.sort((a, b) => {return b[sortItem]-a[sortItem]})
+  }
   return (
     <>
       <div className="set-sort">
@@ -36,7 +41,7 @@ const SearchResults = () => {
         <Arrow custom_class={arrowDirection} onClick={onSortClick} />
       </div>
       <div className="results-grid-div">
-        {items}
+        {items.map((a) => {return <SearchResultElement data={a} />})}
       </div>
     </>
   );
