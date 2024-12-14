@@ -8,7 +8,7 @@ import {getFilteredList} from "./Data.jsx";
 
 const SearchResults = () => {
   const SortOptions = ["Calories", "Fat", "Protein", "Carbohydrates", "Fiber"];
-  const [arrowDirection, setArrowDirection] = useState("up");
+  const [arrowDirection, setArrowDirection] = useState("down");
   const onSortClick = () => {
     setArrowDirection((prevDirection) =>
       prevDirection === "up" ? "down" : "up"
