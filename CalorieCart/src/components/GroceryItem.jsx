@@ -36,6 +36,11 @@ const GroceryItem = ({ text, data, amount="" }) => {
               {data["Protein"]}g
             </span>{" "}
             <br />
+            Sugars:{" "}
+            <span style={{ color: "var(--accentcolor2)" }}>
+              {data["Sugars"]}g
+            </span>{" "}
+            <br />
             Fiber:{" "}
             <span style={{ color: "var(--accentcolor2)" }}>
               {data["Dietary Fiber"]}g

@@ -21,7 +21,7 @@ const DailyValuesRightSide = () => {
           <h2>
             List for{" "}
             <span style={{ color: "var(--accentcolor2)" }}>{daynumber}</span>{" "}
-            day
+            day(s)
           </h2>
           <Button
             size="small"

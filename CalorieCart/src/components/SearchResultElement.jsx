@@ -37,6 +37,11 @@ const SearchResultElement = ({ data }) => {
               {data["Carbohydrates"]}g
             </span>{" "}
             <br />
+            Sugars:{" "}
+            <span style={{ color: "var(--accentcolor2)" }}>
+              {data["Sugars"]}g
+            </span>{" "}
+            <br />
             Protein:{" "}
             <span style={{ color: "var(--accentcolor2)" }}>
               {data["Protein"]}g

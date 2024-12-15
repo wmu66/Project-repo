@@ -221,5 +221,10 @@
     .custom-value-button {
       font-size: 34px;
     }
+
+    .top-contributor-div .editor-column-div.medium {
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
   }
 

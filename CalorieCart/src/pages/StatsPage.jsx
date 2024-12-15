@@ -16,7 +16,7 @@ const StatsPage = () => {
   const { listID } = useParams();
   const dialogRef = useRef();
   const goBack = () => navigate("/list_editor/" + listID);
-  let daynumber = 7; //7 is the default value
+  let daynumber = 1; //1 is the default value
   const navigate = useNavigate();
   const [seed, setSeed] = useState(1);
   const reset = () => {
@@ -32,8 +32,7 @@ const StatsPage = () => {
     const carbs_text =
     "Carbohydrates are the main fuel source for your body. Although, they often get a bad rap, they play an important role in your diet. Too much carbs however, are not good for your health, and can lead to weight gain. The right amount of carbs can hoewever, increase your energy and protect you against some diseases. Not all carbs are however, created equal. There are three main types, sugars, starches and technically fiber is also a carb. Fiber differs from the two, as most fiber can not be broken down by the body, and it is also an example of a healthy carbohydrate. For a healthy diet you should focus on food sources, such as whole grains, beans, peas and lentils, and limit your sugar intake.";
 
-    const sugars_text =
-    "bla bla bla";
+    const sugars_text = "Sugar is an important aspect of our diet, however most people eat too much. Too much sugar can lead to both weight gain as well as causing tooth decay. There are two types of sugars free sugars and non free sugars. The differentiation does not come from whether the sugar is natural. Free sugars include any sugar added to food or drinks, such as chocolate or candy. Free sugars also include some naturally occuring sugars such as those found in honey, syrups, or unsweetened fruit juices. These are the sugars that you should cut down on. Non free sugars are those found naturally in milk, fruit and vegetables, while these are included in the total sugar of nutrition labels, you do not need to cut down on them. This shows that it is important to not only look at the total sugar counts, but also to think about what type of sugars those are.  ";
 
   const protein_text =
     "Proteins are crucial for your health. They are crucial in helping your body repair cells, and make new ones, and are crucially important in growth and development. Protein is crucial for increasing muscle mass and strength, which is especially important if you are workign on building muscle. It is good is also good for your bones. Protein is also helpful in weight control, as it can reduce cravings and your appetite. However, consuming too much protein can have side effects, such as dehydration, fatigue, nausea, but even cardiovascular diseases, liver and kidney injuries or blood vessel disorders. ";
@@ -76,7 +75,7 @@ const StatsPage = () => {
                   <span style={{ color: "var(--accentcolor2)" }}>
                     {" " + daynumber + " "}
                   </span>
-                  days:
+                  day(s):
                 </h2>
                 <Button
                   size="small"
@@ -165,20 +164,13 @@ const StatsPage = () => {
                 <br />
                 Sources: <br />
                 <a
-                  href="https://google.com"
+                  href="https://www.nhs.uk/live-well/eat-well/food-types/how-does-sugar-in-our-diet-affect-our-health/"
                   target="_blank"
                 >
                   {" "}
-                  Google
+                  NHS
                 </a>{" "}
-                <br />
-                <a
-                  href="https://google.com"
-                  target="_blank"
-                >
-                  {" "}
-                  Google
-                </a>{" "}
+                
               </ExpandingCard>
               <ExpandingCard
                 nutrition_measurement="g"

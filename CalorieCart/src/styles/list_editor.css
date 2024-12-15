@@ -616,6 +616,13 @@
       font-size: var(--font-large);
     }
 
+    .total-values-div .editor-column-div.wide {
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+
+
 
   }
 
