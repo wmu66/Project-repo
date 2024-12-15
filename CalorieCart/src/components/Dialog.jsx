@@ -1,14 +1,19 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Dialog = React.forwardRef(
   ({ text, ok_button_text, input_type = "text" }, ref) => {
+    const navigate = useNavigate();
+    const handleSubmit = () => {
+      navigate("/list_editor/1");
+    }
     return (
       <dialog ref={ref} className="list-creator-dialog">
-        <form className="list-creator-form">
+        <form className="list-creator-form" onSubmit={handleSubmit}>
           <input type={input_type} className="input" placeholder={text} />
           <div className="list-creator-dialog-button-div">
-            <button type="submit" formMethod="dialog" className="button small">
+            <button type="button" formMethod="dialog" className="button small">
               Cancel
             </button>
             <button type="submit" formMethod="dialog" className="button small">
