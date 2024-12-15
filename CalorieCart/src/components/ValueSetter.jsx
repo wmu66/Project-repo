@@ -2,17 +2,17 @@ import SmallTitle from "./SmallTitle";
 import Button from "./Button";
 import CustomValue from "./CustomValue";
 import { useState } from "react";
-import { getHealthAmounts, updateHealthAmounts } from "./Data";
+import { getHealthAmounts, updateHealthAmounts, getDefaultHealthAmounts } from "./Data";
 import PropTypes from "prop-types";
 
 const ValueSetter = ({ customClass }) => {
   const healthy_values = {
-    Calories: [getHealthAmounts().cals, "kcal", 100, 1000, 3000], // nutrition, healthy amount, measurement, step size, min and max. Step size is used for manual changing
-    Fats: [getHealthAmounts().fats, "g", 5, 20, 120],
-    Carbohydrates: [getHealthAmounts().carbs, "g", 10, 100, 450],
-    Sugars: [getHealthAmounts().sugars, "g", 10, 100, 450],
-    Protein: [getHealthAmounts().proteins, "g", 5, 15, 100],
-    Fiber: [getHealthAmounts().fibers, "g", 5, 10, 70],
+    Calories: [getDefaultHealthAmounts().cals, "kcal", 100, 1000, 3000], // nutrition, healthy amount, measurement, step size, min and max. Step size is used for manual changing
+    Fats: [getDefaultHealthAmounts().fats, "g", 5, 20, 120],
+    Carbohydrates: [getDefaultHealthAmounts().carbs, "g", 10, 100, 450],
+    Sugars: [getDefaultHealthAmounts().sugars, "g", 10, 100, 450],
+    Protein: [getDefaultHealthAmounts().proteins, "g", 5, 15, 100],
+    Fiber: [getDefaultHealthAmounts().fibers, "g", 5, 10, 70],
   };
 
   const [currentValues, setCurrentValues] = useState(healthy_values);
@@ -55,10 +55,12 @@ const ValueSetter = ({ customClass }) => {
 
   const presetChanger = (presetValues) => {
     //function to handle all preset changes. It changes values using a dictionary passed to it
+ 
     const newValues = Object.fromEntries(
       Object.entries(healthy_values).map(([key, value]) => [key, [...value]])
     );
 
+ 
     Object.keys(newValues).forEach((key) => {
       newValues[key][0] *= presetValues[key];
       newValues[key][0] = Math.round(newValues[key][0]);

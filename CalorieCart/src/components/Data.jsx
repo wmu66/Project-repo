@@ -10,6 +10,17 @@ let sliders = {
   Sugars: [0, 1000],
 };
 let searchText = "";
+
+const defaultHealthAmounts = {
+  cals: 2000,
+  fats: 70,
+  fibers: 30,
+  carbs: 400,
+  sugars: 200,
+  proteins: 55,
+};
+
+
 let healthAmounts = {
   cals: 2000,
   fats: 70,
@@ -23,6 +34,9 @@ export function getHealthAmounts() {
   return healthAmounts;
 }
 
+export function getDefaultHealthAmounts() {
+  return defaultHealthAmounts;
+}
 export function getListAmounts() {
   let cals = 0;
   let fats = 0;
