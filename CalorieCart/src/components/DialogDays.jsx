@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { setDays } from "./Data";
 
 const Dialog = React.forwardRef(
   ({ text, ok_button_text, input_type = "text"}, ref) => {
     const navigate = useNavigate();
-    const handleSubmit = () => {
-      navigate("/list_editor/1");
+    const handleSubmit = (e) => {
+      setDays(e.target["0"].value)
     }
     return (
       <dialog ref={ref} className="list-creator-dialog">

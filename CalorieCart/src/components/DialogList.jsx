@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Dialog = React.forwardRef(
+const DialogList = React.forwardRef(
   ({ text, ok_button_text, input_type = "text"}, ref) => {
     const navigate = useNavigate();
     const handleSubmit = () => {
@@ -26,9 +26,9 @@ const Dialog = React.forwardRef(
   }
 );
 
-Dialog.displayName = "Dialog";
+DialogList.displayName = "Dialog";
 
-Dialog.propTypes = {
+DialogList.propTypes = {
   ref: PropTypes.oneOfType([
     PropTypes.func, // for callback refs
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }), // for object refs
@@ -38,4 +38,4 @@ Dialog.propTypes = {
   input_type: PropTypes.string,
 };
 
-export default Dialog;
+export default DialogList;

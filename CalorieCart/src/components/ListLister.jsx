@@ -1,6 +1,6 @@
 import ListComponent from "./ListComponent";
 import { useRef } from "react";
-import Dialog from "./Dialog";
+import DialogList from "./DialogList";
 
 
 const ListLister = () => {
@@ -24,7 +24,7 @@ const ListLister = () => {
           >
             +
           </button>
-          <Dialog
+          <DialogList
             ref={dialogRef}
             text="New list name"
             ok_button_text="Create"
