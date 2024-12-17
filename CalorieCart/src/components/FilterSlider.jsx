@@ -2,7 +2,7 @@ import RangeSlider from "react-range-slider-input";
 
 import PropTypes from "prop-types";
 import { useState } from "react";
-import {updateSlider} from "./Data.jsx"
+import { updateSlider } from "./Data.jsx";
 const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
   const [[min_value, max_value], SetValue] = useState([
     Number(min),
@@ -23,10 +23,10 @@ const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
   };
 
   const handleCheckbox = () => {
-    if (isEnabled) { // enabled, updating filter
-      updateSlider(substance, [min, max]) 
-    } 
-    else {
+    if (isEnabled) {
+      // enabled, updating filter
+      updateSlider(substance, [min, max]);
+    } else {
       updateSlider(substance, [min_value, max_value]);
     }
     setDisabled(!isEnabled);
@@ -35,7 +35,7 @@ const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
   const [maxValueSelected, setMaxValueSelected] = useState("+"); //when max value is selected the value output should have a + after the measurement
 
   return (
-    <>
+    <div className="filter-slider-div">
       <div className="filter-slider-label-and-checkbox">
         <h2 className="filter-slider-label">{label}</h2>
         <input
@@ -64,7 +64,7 @@ const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
           </p>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -5,6 +5,7 @@ import PageNotFound from "./pages/PageNotFound";
 import ListEditorPage from "./pages/ListEditorPage";
 import StatsPage from "./pages/StatsPage";
 import TargetSetterPage from "./pages/TargetSetterPage";
+import ImprovementPage from "./pages/ImprovementPage";
 
 const Routing = () => {
   return (
@@ -16,6 +17,7 @@ const Routing = () => {
         <Route path="*" element={<PageNotFound />} />
         <Route path="/stats/:listID" element={<StatsPage />} />
         <Route path="/targets" element={<TargetSetterPage />} />
+        <Route path="/improvements/:listID" element={<ImprovementPage />} />
       </Routes>
     </Router>
   );

@@ -1,7 +1,7 @@
 import DropDownMenu from "./DropDownMenu/";
 import FilterSlider from "./FilterSlider";
 import Button from "./Button";
-import {resetSlider, setSearch} from "./Data.jsx";
+import { resetSlider, setSearch } from "./Data.jsx";
 
 export function resetSliders() {
   resetSlider();
@@ -17,11 +17,16 @@ const SearchAndFilter = () => {
   // const color_options = ["Any color", "Blue", "Red", "Green"]; //placeholder for testing
   const handleChange = (event) => {
     setSearch(event.target.value);
-  }
+  };
   return (
     <>
       <div className="editor-column-div">
-        <input type="text" onInput={handleChange} className="input small" placeholder="Search..." />
+        <input
+          type="text"
+          onInput={handleChange}
+          className="input small"
+          placeholder="Search..."
+        />
         <DropDownMenu options={category_options} custom_class="small" />
         {/* <DropDownMenu options={color_options} size="small" /> */}
         <FilterSlider
@@ -32,14 +37,14 @@ const SearchAndFilter = () => {
           measurement="kcal"
           substance="Caloric Value"
         />
-        <FilterSlider 
-          min="1" 
-          max="50" 
-          step="1" 
-          label="Fat" 
-          measurement="g" 
+        <FilterSlider
+          min="1"
+          max="50"
+          step="1"
+          label="Fat"
+          measurement="g"
           substance="Fat"
-          />
+        />
         <FilterSlider
           min="0"
           max="50"
@@ -64,15 +69,20 @@ const SearchAndFilter = () => {
           measurement="g"
           substance="Sugars"
         />
-        <FilterSlider 
-          min="0" 
-          max="50" 
-          step="1" 
+        <FilterSlider
+          min="0"
+          max="50"
+          step="1"
           label="Fiber"
-          measurement="g" 
+          measurement="g"
           substance="Dietary Fiber"
         />
-        <Button size="medium" background="dark" onclick={resetSliders}>
+        <Button
+          size="medium"
+          background="dark"
+          onclick={resetSliders}
+          customClass="reset-filters-button"
+        >
           Reset selection
         </Button>
       </div>

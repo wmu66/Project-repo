@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import DialogDays from "./DialogDays";
 import DailyValueBar from "./DailyValueBar";
-import {getList, getHealthAmounts, getListAmounts, getDays} from "./Data.jsx";
+import { getList, getHealthAmounts, getListAmounts, getDays } from "./Data.jsx";
 
 const DailyValuesRightSide = () => {
   let daynumber = getDays(); //7 is the default value
@@ -11,13 +11,16 @@ const DailyValuesRightSide = () => {
   const navigate = useNavigate();
   const { listID } = useParams();
   const [seed, setSeed] = useState(1);
-  const reset = () => {
-    setSeed(Math.random());
-  };
-  const interval = setInterval(() => {reset()}, 500);
+  // const reset = () => {
+  //   setSeed(Math.random());
+  // };
+  // const interval = setInterval(() => {
+  //   reset();
+  // }, 500);
+
   const navigateToStats = () => {
     navigate("/stats/" + listID);
-  }
+  };
   const list = getList();
   return (
     <>
@@ -80,7 +83,9 @@ const DailyValuesRightSide = () => {
           healthy_amount={getHealthAmounts().fibers}
           custom_class="bottom"
         />
-        <Button customClass="dark wide no-margin" onClick={navigateToStats}>Get detailed stats</Button>
+        <Button customClass="dark wide no-margin" onClick={navigateToStats}>
+          Get detailed stats
+        </Button>
       </div>
     </>
   );

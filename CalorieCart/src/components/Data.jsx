@@ -21,7 +21,6 @@ const defaultHealthAmounts = {
   proteins: 55,
 };
 
-
 let healthAmounts = {
   cals: 2000,
   fats: 70,
@@ -32,15 +31,13 @@ let healthAmounts = {
 };
 
 export function getHealthAmounts() {
-    
-
-let calced = {
-    cals: healthAmounts.cals*days,
-    fats: healthAmounts.fats*days,
-    fibers: healthAmounts.fibers*days,
-    carbs: healthAmounts.carbs*days,
-    sugars: healthAmounts.sugars*days,
-    proteins: healthAmounts.proteins*days,
+  let calced = {
+    cals: healthAmounts.cals * days,
+    fats: healthAmounts.fats * days,
+    fibers: healthAmounts.fibers * days,
+    carbs: healthAmounts.carbs * days,
+    sugars: healthAmounts.sugars * days,
+    proteins: healthAmounts.proteins * days,
   };
   return calced;
 }
@@ -71,7 +68,7 @@ export function getListAmounts() {
     proteins: proteins,
     carbs: carbs,
     fibers: fibers,
-    sugars: sugars
+    sugars: sugars,
   };
 }
 
@@ -93,12 +90,12 @@ export function resetSlider() {
 export function getData() {
   return jsonData;
 }
-export function setDays(i){
-    days = i;
+export function setDays(i) {
+  days = i;
 }
 
-export function getDays(){
-    return days;
+export function getDays() {
+  return days;
 }
 
 export function setList(list) {
@@ -132,6 +129,7 @@ export function removeFromList(i) {
 }
 export function updateSlider(substance, values) {
   sliders[substance] = values;
+  console.log(sliders);
 }
 
 export function setSearch(text) {
