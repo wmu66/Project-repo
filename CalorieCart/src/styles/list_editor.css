@@ -172,7 +172,7 @@
     height: 50px;
     margin: 10px;
   }
-  
+
   
   .filter-slider-label-and-checkbox {
     display: flex;
@@ -181,10 +181,10 @@
     width: 200px;
   }
 
-    .checkbox {
-      cursor: pointer;
-      margin-top: 15px;
-    }
+  .checkbox {
+    cursor: pointer;
+    margin-top: 15px;
+  }
  
 
   .filter-slider-label {

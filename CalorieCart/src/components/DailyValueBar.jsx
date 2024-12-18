@@ -5,31 +5,26 @@ const DailyValueBar = ({
   nutrition_name,
   nutrition_measurement,
   amount,
-  custom_class="",
+  custom_class = "",
 }) => {
   let absolute_difference = amount - healthy_amount;
   let relative_difference = Math.round((amount / healthy_amount - 1) * 100);
 
   let value = relative_difference;
-  value = Math.min(70, Math.max(35 + value, 1)); // I changed it to be smaller :), bounds are still 75 and 0
+  value = Math.min(70, Math.max(35 + value, 2)); //Minimum value is set at 2, so that the bar graph is always a little filled. At 1 percent it does not look good, so 2 is used
 
-  let bar_color = ""
+  let bar_color = "";
 
   if (value >= 30 && value <= 40) {
-      bar_color = "green"
-  }
-
-  else if (value > 40) {
-    bar_color = "too-much"
+    bar_color = "green";
+  } else if (value > 40) {
+    bar_color = "too-much";
     if (value >= 70) {
-      bar_color = "max"
+      bar_color = "max";
     }
+  } else {
+    bar_color = "not-enough";
   }
-
-  else {
-      bar_color = "not-enough"
-  }
-
 
   return (
     <div className={"daily-value-bar-div " + custom_class}>
@@ -42,7 +37,11 @@ const DailyValueBar = ({
       <div className="bar-label">
         <h4>Difference: </h4>
         <h4 style={{ color: "var(--accentcolor2)" }}>
-          {relative_difference + "% (" + absolute_difference + nutrition_measurement + ")"}
+          {relative_difference +
+            "% (" +
+            absolute_difference +
+            nutrition_measurement +
+            ")"}
         </h4>
       </div>
       <div className={"daily-value-bar" + " " + bar_color}>

@@ -35,7 +35,7 @@ const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
   const [maxValueSelected, setMaxValueSelected] = useState("+"); //when max value is selected the value output should have a + after the measurement
 
   return (
-    <div className="filter-slider-div">
+    <>
       <div className="filter-slider-label-and-checkbox">
         <h2 className="filter-slider-label">{label}</h2>
         <input
@@ -52,6 +52,7 @@ const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
         onInput={handleInput}
         value={[min_value, max_value]}
         disabled={!isEnabled}
+        className="rangeslider"
       />
       <div className="range-legend">
         {isEnabled && (
@@ -64,7 +65,7 @@ const FilterSlider = ({ min, max, label, step, measurement, substance }) => {
           </p>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

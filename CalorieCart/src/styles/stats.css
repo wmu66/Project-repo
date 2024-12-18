@@ -214,9 +214,18 @@
     color: black;
   }
 
-  .improvement-page .filter-slider-div {
+  .improvement-page .filter-slider-label-and-checkbox{
     display: none;
   }
+
+  .improvement-page .range-legend{
+    display: none;
+  }
+
+  .improvement-page .rangeslider {
+    display: none;
+  }
+
 
   .improvement-page .reset-filters-button {
     display: none;
