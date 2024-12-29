@@ -200,8 +200,8 @@
   }
 
   .target-setter-page .editor-column-div {
-    margin-top: 15%;
-    height: 60%;
+    margin-top: 5%;
+    height: 70%;
     align-items: center;
     justify-content: center;
     background-color: var(--accentcolor3);
@@ -243,5 +243,11 @@
       overflow-y: scroll;
       overflow-x: hidden;
     }
+
+    .target-setter-page .custom-value-setter-div {
+      color: black;
+      max-height: 40px;
+    }
+  
   }
 
