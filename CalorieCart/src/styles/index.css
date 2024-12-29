@@ -11,6 +11,7 @@
   --font-large: 1.5rem;
   --font-larger: 2rem;
   --font-really-large: 2.6rem;
+  --font-largest: 3rem;
   
 }
 
@@ -260,6 +261,28 @@ body {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.welcome-page-div {
+  text-align: center;
+  color: var(--accentcolor1-darker);
+  padding-top: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.welcome-page-div h1 {
+  font-size: var(--font-largest);
+}
+
+.welcome-page-div h2 {
+  font-size: var(--font-really-large);
+}
+.welcome-page-div p {
+  color: var(--accentcolor);
+  font-size: var(--font-large);
+}
+
 @media (max-height: 1300px) {
   .detail-entry {
     margin-top: 1%;
@@ -320,6 +343,7 @@ body {
     --font-large: 1.25rem;
     --font-larger: 1.5rem;
     --font-really-large: 2rem;
+    --font-largest: 2.5rem;
     
   }
 }

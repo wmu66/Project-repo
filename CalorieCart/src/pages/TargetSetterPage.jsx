@@ -7,8 +7,11 @@ import { useNavigate } from "react-router-dom";
 const TargetSetterPage = () => {
   const navigate = useNavigate();
   const go_back = () => {
-    navigate("/create_list");
+    navigate("/detail_entry");
   };
+  const list_creation = () => {
+    navigate("/create_list")
+  }
   return (
     <>
       <div className="header-footer header">
@@ -22,8 +25,11 @@ const TargetSetterPage = () => {
             Here you can set your daily nutrition targets. <br />
             Or use one of the presets.{" "}
           </h3>
-          <Button customClass="dark" onClick={go_back}>
+          <Button customClass="dark" onClick={list_creation}>
             Continue to list creation
+          </Button>
+          <Button customClass="dark" onClick={go_back}>
+            Go back
           </Button>
         </div>
         <ValueSetter customClass={"target-setter-page"}></ValueSetter>

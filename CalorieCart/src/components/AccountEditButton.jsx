@@ -5,7 +5,7 @@ const AccountEditButton = () => {
   const navigate = useNavigate();
 
   const onClick = () => {
-    navigate("/");
+    navigate("/detail_entry");
   };
 
   return (
