@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import {addToList} from "./Data.jsx";
 import food_icon from "../assets/food-icon.svg"
 
-const SearchResultElement = ({ data }) => {
+const SearchResultElement = ({ data, sortingCategory }) => {
   function addList(){
     addToList(data.name);
   }
@@ -15,9 +15,9 @@ const SearchResultElement = ({ data }) => {
           </div>
           <h3>{data["name"]}</h3>
           <p>
-            Calories{" "}
+            {sortingCategory + " "}
             <span style={{ color: "var(--accentcolor2)" }}>
-              {data["Calories"]}kcal
+              {data[sortingCategory] + (sortingCategory == "Calories" ? "kcal" : "g")}
             </span>
           </p>
           <div className="buttons-div"></div>
@@ -69,6 +69,7 @@ SearchResultElement.propTypes = {
     Protein: PropTypes.number.isRequired,
     Fiber: PropTypes.number.isRequired,
   }).isRequired,
+  sortingCategory: PropTypes.string.isRequired,
 };
 
 export default SearchResultElement;

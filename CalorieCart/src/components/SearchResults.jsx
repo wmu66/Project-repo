@@ -7,7 +7,7 @@ import {getFilteredList} from "./Data.jsx";
 
 
 const SearchResults = () => {
-  const SortOptions = ["Calories", "Fat", "Protein", "Carbohydrates", "Fiber"];
+  const SortOptions = ["Calories", "Fat", "Protein", "Carbohydrates", "Fiber", "Sugars"];
   const [selectedSortingOption, setSelectedSortingOption] = useState(SortOptions[0])
 
 
@@ -20,7 +20,7 @@ const SearchResults = () => {
   let filteredList = getFilteredList();
   //placeholder data for milk:
   let items = []
-  let sortItem = "Calories"
+  let sortItem = selectedSortingOption
   for (let i in filteredList){
     let item = {
       Calories: filteredList[i]["Caloric Value"],
@@ -45,7 +45,7 @@ const SearchResults = () => {
         <Arrow custom_class={arrowDirection} onClick={onSortClick} />
       </div>
       <div className="results-grid-div">
-        {items.map((a) => {return <SearchResultElement data={a} />})}
+        {items.map((a) => {return <SearchResultElement data={a} sortingCategory={selectedSortingOption}/>})}
       </div>
     </>
   );
