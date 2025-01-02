@@ -6,14 +6,17 @@ const DropDownMenu = ({
   options,
   isDefaultSelected,
   setIsDefaultSelected,
+  selectedOption,
+  setSelectedOption,
   custom_class,
 }) => {
   
   //checking whether text has been provided. If yes, then text as a label will be written on the drop down menu, but will not be selectable.
   //If no text is provided then the first element of the array is selected, and is a valid option
 
-  const selectedOption = text || options[0]; //if text is provided than it is selected
-  const displayOptions = text ? options : options.slice(1); //if no text is provided then the first element of the array is selected by default, so only need to map the remaining array
+ //setSelectedOption(text || options[0]); //if text is provided than it is selected
+  //const displayOptions = text ? options : options.slice(1); 
+  const displayOptions = text ? options : options.filter(option => option !== selectedOption); //if no text is provided then the first element of the array is selected by default, so only need to map the remaining array
 
   return (
     <>
@@ -25,9 +28,13 @@ const DropDownMenu = ({
         }
         /* When the default option is selected it is opaque, when the user selects something else then opaque set back to 100% */
         name="drop-down"
-        onChange={
-          setIsDefaultSelected ? () => setIsDefaultSelected(false) : null
-        }
+        onChange={(event) => {
+            if (setIsDefaultSelected) {
+              setIsDefaultSelected(false);
+            }
+            if (setSelectedOption) {
+              setSelectedOption(event.target.value);
+            }}}
       >
         {text ? (
           <option
@@ -57,6 +64,8 @@ DropDownMenu.propTypes = {
   isDefaultSelected: PropTypes.bool,
   setIsDefaultSelected: PropTypes.func,
   custom_class: PropTypes.string,
+  selectedOption: PropTypes.string,
+  setSelectedOption: PropTypes.func,
 };
 
 

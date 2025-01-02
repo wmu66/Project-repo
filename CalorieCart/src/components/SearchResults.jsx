@@ -8,6 +8,9 @@ import {getFilteredList} from "./Data.jsx";
 
 const SearchResults = () => {
   const SortOptions = ["Calories", "Fat", "Protein", "Carbohydrates", "Fiber"];
+  const [selectedSortingOption, setSelectedSortingOption] = useState(SortOptions[0])
+
+
   const [arrowDirection, setArrowDirection] = useState("down");
   const onSortClick = () => {
     setArrowDirection((prevDirection) =>
@@ -38,7 +41,7 @@ const SearchResults = () => {
   return (
     <>
       <div className="set-sort">
-        <DropDownMenu options={SortOptions} custom_class="small dark" />
+        <DropDownMenu options={SortOptions} custom_class="small dark" selectedOption={selectedSortingOption} setSelectedOption={setSelectedSortingOption} />
         <Arrow custom_class={arrowDirection} onClick={onSortClick} />
       </div>
       <div className="results-grid-div">

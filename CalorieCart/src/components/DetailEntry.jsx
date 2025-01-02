@@ -3,6 +3,7 @@ import DropDownMenu from "./DropDownMenu";
 import AccountCirleIcon from "../assets/account_circle.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { setdefaultHealthAmount } from "./Data";
 
 const DetailEntry = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const DetailEntry = () => {
     //let isWeightValid = true;
     //let isHeightValid = true;
 
+    setdefaultHealthAmount(selectedGender)
     if ((weight_int > 0) & (height_int > 0)) {
       navigate("/targets");
     }
@@ -25,6 +27,7 @@ const DetailEntry = () => {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [isDefaultSelected, setIsDefaultSelected] = useState(true); //checks whether a gender has been picked
+  const [selectedGender, setSelectedGender] = useState("")
   const [weightValid, setIsWeightValid] = useState(""); // controls weather warning that weight is invalid should be shown
   const [heightValid, setIsHeightValid] = useState("");
 
@@ -105,6 +108,8 @@ const DetailEntry = () => {
           options={gender}
           isDefaultSelected={isDefaultSelected}
           setIsDefaultSelected={setIsDefaultSelected}
+          selectedOption={selectedGender}
+          setSelectedOption={setSelectedGender}
         ></DropDownMenu>
         <Button onClick={onClick} disabled={form_not_filled_in}>
           Create your first list...

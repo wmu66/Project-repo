@@ -12,14 +12,27 @@ let sliders = {
 let searchText = "";
 let days = 1;
 
-const defaultHealthAmounts = {
-  cals: 2000,
-  fats: 70,
-  fibers: 30,
-  carbs: 400,
-  sugars: 200,
-  proteins: 55,
-};
+let defaultHealthAmounts;
+
+export function setdefaultHealthAmount(gender) {
+if (gender == "Male") {
+  defaultHealthAmounts = {
+    cals: 2500,
+    fats: 80,
+    fibers: 38,
+    carbs: 400,
+    sugars: 60,
+    proteins: 55,
+  }} else {
+  defaultHealthAmounts = {
+    cals: 2000,
+    fats: 55,
+    fibers: 25,
+    carbs: 300,
+    sugars: 40,
+    proteins: 45,
+  }
+}}
 
 let healthAmounts = {
   cals: 2000,
