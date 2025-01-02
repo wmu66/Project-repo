@@ -87,7 +87,7 @@ export function getListAmounts() {
 
 export function updateHealthAmounts(item, amount) {
   healthAmounts[item] = amount;
-  console.log(healthAmounts);
+  //console.log(healthAmounts);
 }
 
 export function resetSlider() {
@@ -115,8 +115,8 @@ export function setList(list) {
   curList = list;
 }
 export function getList() {
-  console.log("curlist");
-  console.log(curList);
+  //console.log("curlist");
+  //console.log(curList);
   return curList;
 }
 export function resetList() {
@@ -129,7 +129,7 @@ export function addToList(i) {
     curList[i] = jsonData[i];
     curList[i].amount = 1;
   }
-  console.log(curList);
+  //console.log(curList);
 }
 export function removeFromList(i) {
   if (curList[i]) {
@@ -142,7 +142,7 @@ export function removeFromList(i) {
 }
 export function updateSlider(substance, values) {
   sliders[substance] = values;
-  console.log(sliders);
+  //console.log(sliders);
 }
 
 export function setSearch(text) {

@@ -11,7 +11,7 @@ const TopContributors = () => {
   let sugarList = [];
   let fiberList = [];
   for (let i in list) {
-    console.log(i);
+    //console.log(i);
     calList.push({
       name: i,
       amount: list[i]["Caloric Value"],
@@ -64,7 +64,7 @@ const TopContributors = () => {
   });
   fiberList = fiberList.slice(0, 3);
 
-  console.log(calList);
+  //console.log(calList);
   return (
     <>
       <div>

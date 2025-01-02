@@ -14,7 +14,7 @@ const ExpandingCard = ({
   healthy_amount,
   children,
 }) => {
-  const [open, setOpen] = useState(""); //on default closed
+  const [open, setOpen] = useState(nutrition_name == "Calories" ? "open" : ""); //on default closed except for Calories the first card
   const { listID } = useParams(); //gets the listID from the URL
   const navigate = useNavigate();
   const onClick = () => {
@@ -24,6 +24,8 @@ const ExpandingCard = ({
       setOpen("");
     }
   };
+
+
 
   const slider_mid_points = {
     "Caloric Value": 250,
