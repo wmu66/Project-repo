@@ -56,7 +56,7 @@ const ExpandingCard = ({
       updateSlider(nutrition, [slider_mid_points[nutrition], 1000]); //setting slider minimum value to the midpoint
       console.log("too little");
     }
-    navigate("/improvements/" + listID);
+    navigate("/improvements/" + listID + "/" + ((nutrition_name == "Fats") ? "Fat" : nutrition_name));
   };
 
   return (
@@ -75,8 +75,8 @@ const ExpandingCard = ({
         <div className="card-text">
           <p>{children}</p>
           <div className="container">
-            <Button customClass="wide dark" onClick={on_improvement_click}>
-              See how to improve
+            <Button customClass="wide dark tall" onClick={on_improvement_click}>
+              Show products that would help
             </Button>
           </div>
         </div>

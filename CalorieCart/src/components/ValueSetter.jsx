@@ -10,7 +10,7 @@ const ValueSetter = ({ customClass }) => {
     Calories: [getDefaultHealthAmounts().cals, "kcal", 100, 1000, 3000], // nutrition, healthy amount, measurement, step size, min and max. Step size is used for manual changing
     Fats: [getDefaultHealthAmounts().fats, "g", 5, 20, 120],
     Carbohydrates: [getDefaultHealthAmounts().carbs, "g", 10, 100, 450],
-    Sugars: [getDefaultHealthAmounts().sugars, "g", 10, 100, 450],
+    Sugars: [getDefaultHealthAmounts().sugars, "g", 10, 30, 150],
     Protein: [getDefaultHealthAmounts().proteins, "g", 5, 15, 100],
     Fiber: [getDefaultHealthAmounts().fibers, "g", 5, 10, 70],
   };

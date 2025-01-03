@@ -18,7 +18,7 @@ const Routing = () => {
         <Route path="*" element={<PageNotFound />} />
         <Route path="/stats/:listID" element={<StatsPage />} />
         <Route path="/targets" element={<TargetSetterPage />} />
-        <Route path="/improvements/:listID" element={<ImprovementPage />} />
+        <Route path="/improvements/:listID/:sortDir" element={<ImprovementPage />} />
         <Route path="/" element={<WelcomePage />} />
       </Routes>
     </Router>

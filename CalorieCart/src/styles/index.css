@@ -160,6 +160,10 @@ body {
   width: 260px;
 }
 
+.button.tall {
+  height: 70px;
+}
+
 
 .button.dark {
   background-color: var(--accentcolor1);
@@ -281,6 +285,7 @@ body {
 .welcome-page-div p {
   color: var(--accentcolor);
   font-size: var(--font-large);
+  text-align: justify;
 }
 
 @media (max-height: 1300px) {

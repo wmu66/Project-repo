@@ -10,8 +10,9 @@ import DailyValuesRightSide from "../components/DailyValuesRightSide.jsx";
 import SearchResults from "../components/SearchResults.jsx";
 import { useState } from "react";
 import getList from "../components/Data.jsx";
+import PropTypes from "prop-types";
 
-const ListEditorPage = () => {
+const ListEditorPage = ({defaultSortDirection, customHeadingText}) => {
   const { listID } = useParams(); //gets the listID from the URL
   const navigate = useNavigate();
 
@@ -50,7 +51,7 @@ const ListEditorPage = () => {
               List creator
             </Button>
             <h1 className="header-text">
-              CalorieCart: Create your healthy, nutritious grocery list today!
+              {customHeadingText || "CalorieCart: Create your healthy, nutritious grocery list today!"}
             </h1>
           </div>
           <AccountEditButton />
@@ -62,7 +63,7 @@ const ListEditorPage = () => {
           </div>
 
           <div className="search-result-div">
-            <SearchResults />
+            <SearchResults defaultSortDirection={defaultSortDirection || NaN}/>
           </div>
           <div className={"grocery-list-div" + " " + list_status}>
             <SmallTitle>Added items</SmallTitle>
@@ -81,5 +82,11 @@ const ListEditorPage = () => {
     </>
   );
 };
+
+ListEditorPage.propTypes = {
+  defaultSortDirection: PropTypes.string, //default sorting direction, used when accessing via the default page
+  customHeadingText: PropTypes.string,
+};
+
 
 export default ListEditorPage;

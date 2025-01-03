@@ -2,10 +2,10 @@ import DropDownMenu from "./DropDownMenu/";
 import FilterSlider from "./FilterSlider";
 import Button from "./Button";
 import { resetSlider, setSearch } from "./Data.jsx";
+import { useState } from "react";
 
-export function resetSliders() {
-  resetSlider();
-}
+
+
 const SearchAndFilter = () => {
   const category_options = [
     //placeholder for testing
@@ -18,6 +18,16 @@ const SearchAndFilter = () => {
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
+  
+  const [reset, setReset] = useState(false)
+  
+  const resetSliders = () => {
+    setReset(reset || true)
+    console.log(reset)
+    resetSlider();
+  }
+ 
+
   return (
     <>
       <div className="editor-column-div">
@@ -27,7 +37,7 @@ const SearchAndFilter = () => {
           className="input small"
           placeholder="Search..."
         />
-        <DropDownMenu options={category_options} custom_class="small" />
+        <DropDownMenu options={category_options} custom_class="small" text={"Any category"}/>
         {/* <DropDownMenu options={color_options} size="small" /> */}
         <FilterSlider
           min="0"
@@ -80,7 +90,7 @@ const SearchAndFilter = () => {
         <Button
           size="medium"
           background="dark"
-          onclick={resetSliders}
+          onClick={resetSliders}
           customClass="reset-filters-button"
         >
           Reset selection

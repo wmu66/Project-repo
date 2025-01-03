@@ -91,6 +91,7 @@ export function updateHealthAmounts(item, amount) {
 }
 
 export function resetSlider() {
+  console.log("resetting")
   sliders = {
     "Caloric Value": [0, 1000],
     Fat: [0, 1000],

@@ -3,11 +3,16 @@ import SearchResultElement from "./SearchResultElement";
 import Arrow from "../assets/arrow.jsx";
 import { useState } from "react";
 import {getFilteredList} from "./Data.jsx";
+import PropTypes from "prop-types";
 
 
 
-const SearchResults = () => {
-  const SortOptions = ["Calories", "Fat", "Protein", "Carbohydrates", "Fiber", "Sugars"];
+const SearchResults = ({defaultSortDirection}) => {
+  let SortOptions = ["Calories", "Fat", "Protein", "Carbohydrates", "Fiber", "Sugars"];
+  if (defaultSortDirection) {
+    SortOptions = [defaultSortDirection, ...SortOptions.filter(option => option !== defaultSortDirection)]; //reordering the array so that the default sort option will be the new first option
+  }
+
   const [selectedSortingOption, setSelectedSortingOption] = useState(SortOptions[0])
 
 
@@ -49,6 +54,11 @@ const SearchResults = () => {
       </div>
     </>
   );
+};
+
+
+SearchResults.propTypes = {
+  defaultSortDirection: PropTypes.string, //default sorting direction, used when accessing via the default page
 };
 
 export default SearchResults;
