@@ -20,7 +20,7 @@ const DetailEntry = () => {
     }
   };
 
-  const gender = ["Male", "Female"];
+  const gender = ["Male", "Female", "Prefer not to say"];
 
   // States for name, weight, and gender selection
   const [name, setName] = useState("");

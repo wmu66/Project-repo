@@ -32,7 +32,8 @@ if (gender == "Male") {
     carbs: 400,
     sugars: 60,
     proteins: 55,
-  }} else {
+  }} 
+  else if (gender == "Female") {
   defaultHealthAmounts = {
     cals: 2000,
     fats: 55,
@@ -40,9 +41,18 @@ if (gender == "Male") {
     carbs: 300,
     sugars: 40,
     proteins: 45,
-  }
-  healthAmounts = { ...defaultHealthAmounts };
 }}
+  else {
+    defaultHealthAmounts = {
+      cals: 2250,
+      fats: 65,
+      fibers: 30,
+      carbs: 350,
+      sugars: 50,
+      proteins: 50,
+  }}
+  healthAmounts = { ...defaultHealthAmounts };
+}
 
 
 
