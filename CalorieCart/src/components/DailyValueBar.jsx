@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { days } from "./Data";
 
 const DailyValueBar = ({
   healthy_amount,
@@ -7,6 +8,8 @@ const DailyValueBar = ({
   amount,
   custom_class = "",
 }) => {
+  amount = Math.round(amount/days)
+  healthy_amount = Math.round(healthy_amount/days)
   let absolute_difference = amount - healthy_amount;
   let relative_difference = Math.round((amount / healthy_amount - 1) * 100);
 

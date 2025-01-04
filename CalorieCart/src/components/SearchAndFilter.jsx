@@ -8,11 +8,7 @@ import { useState } from "react";
 
 const SearchAndFilter = () => {
   const category_options = [
-    //placeholder for testing
-    "Any category",
-    "Meat",
-    "Fruit and vegetables",
-    "Bread",
+    "Any category"
   ];
   // const color_options = ["Any color", "Blue", "Red", "Green"]; //placeholder for testing
   const handleChange = (event) => {

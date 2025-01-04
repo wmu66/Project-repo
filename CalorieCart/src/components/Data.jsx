@@ -10,9 +10,18 @@ let sliders = {
   Sugars: [0, 1000],
 };
 let searchText = "";
-let days = 1;
+export let days = 1;
 
 let defaultHealthAmounts;
+
+let healthAmounts = {
+  cals: 2500,
+  fats: 80,
+  fibers: 38,
+  carbs: 400,
+  sugars: 60,
+  proteins: 55,
+}
 
 export function setdefaultHealthAmount(gender) {
 if (gender == "Male") {
@@ -32,16 +41,10 @@ if (gender == "Male") {
     sugars: 40,
     proteins: 45,
   }
+  healthAmounts = { ...defaultHealthAmounts };
 }}
 
-let healthAmounts = {
-  cals: 2000,
-  fats: 70,
-  fibers: 30,
-  carbs: 400,
-  sugars: 200,
-  proteins: 55,
-};
+
 
 export function getHealthAmounts() {
   let calced = {

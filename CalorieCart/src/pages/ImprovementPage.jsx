@@ -6,7 +6,7 @@ const ImprovementPage = () => {
  
   return (
     <div className="improvement-page">
-      <ListEditorPage defaultSortDirection={sortDir} customHeadingText={"Showing improvements for the category of " + (sortDir == "Fat" ? "fats" : sortDir.toLowerCase())}/>
+      <ListEditorPage defaultSortDirection={sortDir} customHeadingText={"Showing grocery items that would help in the category of " + (sortDir == "Fat" ? "fats" : sortDir.toLowerCase())}/>
     </div>
   );
 };
