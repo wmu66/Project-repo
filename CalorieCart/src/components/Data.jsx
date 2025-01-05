@@ -114,6 +114,10 @@ export function resetSlider() {
     Sugars: [0, 1000],
   };
 }
+
+export function getSliders(){
+    return sliders;
+}
 export function getData() {
   return jsonData;
 }

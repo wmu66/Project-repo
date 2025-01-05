@@ -37,7 +37,7 @@ const SearchAndFilter = () => {
         {/* <DropDownMenu options={color_options} size="small" /> */}
         <FilterSlider
           min="0"
-          max="500"
+          max="1000"
           step="10"
           label="Calories"
           measurement="kcal"
