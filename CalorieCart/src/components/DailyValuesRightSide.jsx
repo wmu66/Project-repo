@@ -11,12 +11,12 @@ const DailyValuesRightSide = () => {
   const navigate = useNavigate();
   const { listID } = useParams();
   const [seed, setSeed] = useState(1);
-  // const reset = () => {
-  //   setSeed(Math.random());
-  // };
-  // const interval = setInterval(() => {
-  //   reset();
-  // }, 500);
+  const reset = () => {
+    setSeed(Math.random());
+  };
+  const interval = setInterval(() => {
+    reset();
+  }, 500);
 
   const navigateToStats = () => {
     navigate("/stats/" + listID);
